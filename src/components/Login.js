@@ -43,11 +43,9 @@ const Login = (props) => {
     <div className="divImage"><img className="authImage" src="/cloudNotesIcon.png" alt="icon" /></div>
       <h2 className="heading">Log in</h2>
       <div class="form-group">
-        {/* <label for="exampleInputEmail1">Email address</label> */}
         <input type="email" class="form-control authForm" id="email" name="email" onChange={handleChange} value={credentials.email} aria-describedby="emailHelp" placeholder='Enter Email'/>
       </div>
       <div class="form-group">
-        {/* <label for="exampleInputPassword1">Password</label> */}
         <input type="password" class="form-control authForm" id="password" name="password" onChange={handleChange} value={credentials.password} placeholder='Password'/>
       </div>
       <button type="submit" class="authButton">Login</button>

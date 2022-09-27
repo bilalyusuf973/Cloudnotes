@@ -65,6 +65,12 @@ const Notepage = (props) => {
         </div>
       </div>
 
+      <div className="text">
+        <div className="notesArea">
+          <textarea type="textarea" className="codeArea" placeholder="Paste your code here"/>
+        </div>
+      </div>
+
       <div className="select" >
         <select name="format" id="tag" required onChange={handleChange}>
             <option value="" disabled selected>--- Choose a Tag ---</option>

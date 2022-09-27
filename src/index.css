@@ -36,9 +36,9 @@ select {
 }
 
 .authForm{
-      background-color: #ffffff;
-      border: solid 1px #c3c4c7;
-      border-radius: 4px;
+      background-color: #232121;
+      border: solid 1px white;
+      border-radius: 20px;
       box-sizing: border-box;
       color: #2c3338;
       height: 40px;
@@ -51,7 +51,7 @@ select {
 
 .authButton{
   background-color: #0860e4;
-  border-radius: 7px;
+  border-radius: 20px;
   box-sizing: border-box;
   color: white;
   height: 40px;
@@ -63,6 +63,8 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  outline-color: white;
 }
 
 .authImage{
@@ -99,7 +101,7 @@ select {
   text-align: center;
   align-items: center;
   background-color: #0860e4;
-  border-radius: 25px;
+  border-radius: 20px;
   border: none;
   height: 38px;
   width: 120px;
@@ -114,17 +116,20 @@ select {
   align-items: center;
   width: 100%;
   height: 3rem;
-  background-color: white;
-  border-radius: 3px;
+  background-color:  #232121;
+  border-radius: 20px;
+  border: 1px solid white;
 }
 
 #title{
   text-indent: 5px;
-  margin-left: 3px;
-  width: 90%;
+  margin-left: 9px;
+  width: 96%;
   border: none;
   height: 90%;
-  outline-color: white;
+  background-color:  #232121;
+  outline: none;
+  color: white;
 }
 
 #description{
@@ -132,30 +137,36 @@ select {
   margin-left: 3px;
   text-indent: 5px;
   width: 96%;
-  height: 12.2rem;
-  outline-color: white;
+  height: 11.8rem;
+  outline: none;
   border: none;
+  color: white;
+  background-color:  #232121;
 }
 
 .textareaField{
   display: flex;
   justify-content: space-between;
-  background-color: white;
-  border-radius: 3px;
+  background-color:  #232121;
+  border-radius: 20px;
   height: 13rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid white;
 }
 
 .copyIcon1{
   font-size: 1.5rem;
   margin-top: 8px;
   margin-right: 6px;
+  color: white;
 }
 
 .copyIcon2{
   margin-top: 8px;
   font-size: 1.5rem;
   margin-right: 6px;
+  color: white;
 }
 
 
@@ -170,11 +181,11 @@ select {
   outline:0;
   box-shadow:none;
   border:0!important;
-  background: white;
+  background:  #232121;
   background-image: none;
   flex: 1;
   padding: 0 .5em;
-  color: black;
+  color: white;
   cursor:pointer;
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
@@ -190,7 +201,7 @@ option[value=""][disabled] {
   color: gray;
 }
 option {
-  color: black;
+  color: white;
 }
 
 .select {
@@ -200,9 +211,10 @@ option {
   width: 19.7em;
   height: 3em;
   line-height: 3;
-  background: white;
+  background:  #232121;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 20px;
+  border: 1px solid white;
 }
 .select::after {
   content: '\25BC';
@@ -210,12 +222,33 @@ option {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background: white;
+  background:  #232121;
   cursor:pointer;
   pointer-events:none;
   transition:.25s all ease;
-  color: #232121;
+  color: white;
 }
 .select:hover::after {
   color: #0860e4;
 }
+
+.notesArea{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid white;
+  width: 100%;
+  height: 40rem;
+  border-radius: 20px;
+}
+
+.codeArea{
+  margin-top: 8px;
+  background-color:  #232121;
+  color: white;
+  outline: none;
+  border: none;
+  width: 96%;
+  height: 39rem;
+  margin-left: 8px;
+}
+
