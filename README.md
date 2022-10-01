@@ -12,10 +12,10 @@ A web app made by using MERN stack to maintain important notes of a user.
 
 In the project directory you can run 
 
-# npm install 
+npm install 
 
 After the installation of the node_modules folder, you can run the below command.
 This command will start the frontend and backend of the app at the same time.
 
-# npm run both 
+npm run both 
 
