@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import NoteContext from '../context/notes/NoteContext';
 import FetchedNotes from './FetchedNotes';
+// import First from './First.txt'
 
 const Notepage = (props) => {
 
@@ -16,9 +17,20 @@ const Notepage = (props) => {
 
     setNote({title, description, tag});
   }
-  
+
+//   const clickHandler = async () => {
+
+//     const data = await fetch(First, () => {
+      
+//     })
+
+//     const text = await data.text();
+//     console.log(text);
+// }
+        
   const handleClick = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+    // clickHandler();
     addNote(note);
     showAlert("success", "New Note Added Successfully");
     setNote({title: "", description: "", tag: ""})  
@@ -67,7 +79,7 @@ const Notepage = (props) => {
 
       <div className="text">
         <div className="notesArea">
-          <textarea type="textarea" className="codeArea" placeholder="Paste your code here"/>
+          <textarea type="textarea" id='codeArea' className="codeArea" placeholder="Paste your code here"/>
         </div>
       </div>
 
