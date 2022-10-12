@@ -50,33 +50,32 @@ const FetchedNotes = (props) => {
       </button>
       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
-          <div className="modal-content">
+          <div className="modal-content bg-dark">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Edit Note
-              </h5>
+              <h5 className="modal-title" id="exampleModalLabel"> Edit Note </h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true" className="text-light">&times;</span>
               </button>
             </div>
             <div className="modal-body">
             <form>
           <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Title
-            </label>
-            <input type="text" className="form-control" id="editTitle" name="title" value={note.editTitle} aria-describedby="title" onChange={handleChange}/>
+            <label htmlFor="title" className="form-label"> Title: </label><br />
+            <input type="text" className="editInput" id="editTitle" name="title" value={note.editTitle} aria-describedby="title" onChange={handleChange}/>
           </div>
+
           <div className="mb-3">
-            <label htmlFor="description" className="form-label">
-              Description
-            </label>
-            <textarea type="textarea" className="form-control" id="editDescription" value={note.editDescription} name="description" onChange={handleChange}/>
+            <label htmlFor="description" className="form-label"> Description: </label><br />
+            <textarea type="textarea" className="editTextarea" id="editDescription" value={note.editDescription} name="description" onChange={handleChange}/>
           </div>
-          <label htmlFor="tag" className="form-label">
-              Choose a Tag
-          </label><br/>
-          <select className="form-select my-2" id="editTag" onChange={handleChange} value={note.editTag}>
+
+          <div className="enotesArea">
+          <label htmlFor="code" className="form-label"> Code: </label><br />
+            <textarea type="textarea" id='eCodeArea' placeholder="Paste your code here"/>
+          </div>
+
+          <label htmlFor="tag" className="form-label"> Tag: </label><br/>
+          <select className="editSelect" id="editTag" onChange={handleChange} value={note.editTag}>
               <option value="Personal" name="Personal">Personal</option>
               <option value="Professional" name="Professional">Professional</option>
               <option value="General" name="General">General</option>
@@ -89,7 +88,7 @@ const FetchedNotes = (props) => {
               <button type="button" ref={refClose} className="btn btn-secondary" data-dismiss="modal">
                 Close
               </button>
-              <button type="button" className="btn btn-primary" onClick={handleClick}>
+              <button type="button" className="BtnLogout" onClick={handleClick}>
                 Update Note
               </button>
             </div>
@@ -97,7 +96,7 @@ const FetchedNotes = (props) => {
         </div>
       </div>
       <div className="my-3">
-        <h5>Your Notes</h5>
+        <h3>Your Notes</h3>
         <div className="my-4">
           {notes.length === 0 && 'Please add a note to display here'}
         </div>

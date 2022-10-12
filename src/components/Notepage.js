@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import NoteContext from '../context/notes/NoteContext';
-import FetchedNotes from './FetchedNotes';
 
 const Notepage = (props) => {
 
@@ -50,30 +49,23 @@ const Notepage = (props) => {
     <div className='container'>
 
       <h2>Create a new note</h2>
-
-      <div className="titlediv my-4">
         <div className="inputField">
           <input type="text" placeholder="Title" id='title' onChange={handleChange} minLength={3} required value={note.title} />
           <span className='iconSpan'><i className="fa-regular fa-copy copyIcon1" onClick={handleCopy1}/></span>  
         </div>
-      </div>
 
-      <div className="descriptiondiv">
         <div className="textareaField">
         <textarea type="textarea" placeholder="Description" id='description' onChange={handleChange} minLength={5} required value={note.description}/>
           <span className='iconSpan'><i className="fa-regular fa-copy copyIcon2" onClick={handleCopy2}/></span>  
         </div>
-      </div>
 
-      <div className="text">
         <div className="notesArea">
           <textarea type="textarea" id='codeArea' className="codeArea" placeholder="Paste your code here"/>
         </div>
-      </div>
 
       <div className="select" >
         <select name="format" id="tag" required onChange={handleChange}>
-            <option value="" disabled selected>--- Choose a Tag ---</option>
+            <option value="" disabled selected>--- Tag ---</option>
             <option value="General">General</option>
             <option value="Personal">Personal</option>
             <option value="Professional">Professional</option>
@@ -83,7 +75,6 @@ const Notepage = (props) => {
       </div>
       
       <button className='BtnAddnote' onClick={handleClick} disabled={note.title.length < 3 || note.description.length < 5 || note.tag === ""}>Add note</button>
-      <FetchedNotes showAlert={showAlert}/>
     </div>
   )
 }

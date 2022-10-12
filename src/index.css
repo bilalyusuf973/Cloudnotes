@@ -38,7 +38,7 @@ select {
 .authForm{
       background-color: #232121;
       border: solid 1px white;
-      border-radius: 20px;
+      border-radius: 5px;
       box-sizing: border-box;
       color: #2c3338;
       height: 40px;
@@ -51,7 +51,7 @@ select {
 
 .authButton{
   background-color: #0860e4;
-  border-radius: 20px;
+  border-radius: 5px;
   box-sizing: border-box;
   color: white;
   height: 40px;
@@ -86,22 +86,18 @@ select {
   margin: 15px 0px;
 }
 
-.form-control{
-  background-color: #232121;
-}
-
 .notesItem{
   background-color: #232121;
   color: white;
   border: 2px solid white;
 }
 
-.BtnAddnote, .BtnLogout{
+.BtnAddnote{
   color: white;
   text-align: center;
   align-items: center;
   background-color: #0860e4;
-  border-radius: 20px;
+  border-radius: 5px;
   border: none;
   height: 38px;
   width: 120px;
@@ -114,10 +110,10 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 93%;
   height: 3rem;
   background-color:  #232121;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid white;
 }
 
@@ -148,11 +144,12 @@ select {
   display: flex;
   justify-content: space-between;
   background-color:  #232121;
-  border-radius: 20px;
+  border-radius: 5px;
   height: 13rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border: 1px solid white;
+  width: 93%;
 }
 
 .copyIcon1{
@@ -169,11 +166,28 @@ select {
   color: white;
 }
 
+.editTextarea, .editInput, #eCodeArea{
+  height: auto;
+  width: 100%;
+  color: white;
+  background-color: #2d2d2e;
+  border-radius: 4px;
+  text-indent: 3px;
+  font-size: 14px;
+}
+.editSelect{
+  height: auto;
+  width: 40%;
+  color: white;
+  background-color: #2d2d2e;
+  border-radius: 4px;
+  font-size: 14px;
+}
 
 
 /* Select box code */
 
-select {
+#tag {
   -webkit-appearance:none;
   -moz-appearance:none;
   -ms-appearance:none;
@@ -208,12 +222,12 @@ option {
   margin: 25px 0px;
   position: relative;
   display: flex;
-  width: 19.7em;
-  height: 3em;
+  width: 45%;
+  height: auto;
   line-height: 3;
   background:  #232121;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid white;
 }
 .select::after {
@@ -233,12 +247,12 @@ option {
 }
 
 .notesArea{
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  align-content: center;
+  margin: 1.5rem 0;
   border: 1px solid white;
-  width: 100%;
+  width: 93%;
   height: 40rem;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .codeArea{
@@ -247,8 +261,33 @@ option {
   color: white;
   outline: none;
   border: none;
-  width: 96%;
-  height: 39rem;
+  width: 95%;
+  height: 39.2rem;
   margin-left: 8px;
 }
 
+.card-title, .card-text{
+  color: black;
+}
+
+.nav-link{
+  margin: 0 5px;
+}
+
+.nav-link:hover{
+  height: 40px;
+  width: auto;
+  outline: 1px solid white;
+  border-radius: 5px;
+}
+
+.navBtn{
+  cursor: pointer;
+  width: 6rem;
+  height: 2.6rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border-radius: 5px;
+  background-color: #0860e4; 
+}

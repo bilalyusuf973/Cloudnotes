@@ -12,37 +12,37 @@ const Navbar = () => {
 
   return (
     <>
-    {location.pathname === "/" && <nav className="navbar navbar-expand-lg bg-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand text-white" to="/login">
-        <img src="cloudNotesIcon.png" width="40" height="30" className="d-inline-block align-top" alt=""/>
-        Cloudnotes
+      {(location.pathname === "/" || location.pathname === "/allnotes") && <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <Link className="navbar-brand text-white" to="/">
+          <img src="cloudNotesIcon.png" width="40" height="30" className="d-inline-block align-top" alt=""/>
+          Cloudnotes
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-        >
-          <span className="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === "/" ? "text-blue" : "text-white"}`} aria-current="page" to="/">
+              <Link className="nav-link text-light" aria-current="page" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === "/about" ? "text-blue" : "text-white"}`} to="/about">
+              <Link className="nav-link text-light" to="/about">
                 About
               </Link>
-            </li>
+            </li>  
+            <li className="nav-item">
+              {location.pathname === "/" && <Link className="nav-link text-light" to="/allnotes">All notes</Link>}
+            </li> 
           </ul>
-          <button className="BtnLogout ml-auto" onClick={handleLogout}>Logout</button>
-        </div>
-      </div>
-    </nav>}
+
+          <div className="navBtn " onClick={handleLogout}>
+            Logout
+          </div>
+
+        </div>  
+      </nav>}
     </>
   );
 };

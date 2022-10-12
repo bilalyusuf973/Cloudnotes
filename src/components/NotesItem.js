@@ -12,18 +12,22 @@ const NotesItem = (props) => {
     }
 
   return (
-    <div className='col-md-3'>
-<div className="card my-3 notesItem">
-  <div className="card-body " >
-    <div className="d-flex align-items-center">
-    <h5 className="card-title">{note.title}</h5>
-    <i className="fa-solid fa-pen-to-square mx-2" onClick={handleEditClick}></i>
-    <i className="fa-solid fa-trash-can mx-2" onClick={handleDelete} ></i>
+    <div className="col-sm-6">
+    <div className="card m-1 bg-dark">
+      <div className="card-body">
+
+        <h5 className="card-title text-light">{note.title}</h5>
+        <p className="card-text text-light">{note.description}</p>
+
+        <div className="features">
+          <button className="BtnAddnote">Open</button>
+          <i className="fa-solid fa-pen-to-square mx-2 text-light" onClick={handleEditClick}></i>
+          <i className="fa-solid fa-trash-can mx-2 text-light" onClick={handleDelete} ></i>
+        </div>
+
+      </div>
     </div>
-    <p className="card-text">{note.description}</p>  
   </div>
-</div>
-    </div>
   )
 }
 
