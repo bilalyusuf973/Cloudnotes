@@ -272,22 +272,27 @@ option {
 
 .nav-link{
   margin: 0 5px;
-}
-
-.nav-link:hover{
+  border-radius: 5px;
   height: 40px;
   width: auto;
+}
+
+.nav-link:hover, .navBtn:hover{
   outline: 1px solid white;
-  border-radius: 5px;
 }
 
 .navBtn{
+  margin-left: 5px;
   cursor: pointer;
   width: 6rem;
-  height: 2.6rem;
+  height: 40px;
   display: grid;
   justify-content: center;
   align-content: center;
   border-radius: 5px;
-  background-color: #0860e4; 
+  background-color: #0860e4;
+}
+
+.navbar-nav{
+  margin-left: auto;
 }
