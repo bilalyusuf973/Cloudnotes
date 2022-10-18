@@ -6,7 +6,7 @@ import NotesItem from "./NotesItem";
 const FetchedNotes = (props) => {
   const context = useContext(NoteContext);
   const { notes, getNotes, editNote} = context;
-  const {showAlert} = props;
+  const {setNotes, showAlert} = props;
   const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: ""});
 
   const navigate = useNavigate();
@@ -102,7 +102,7 @@ const FetchedNotes = (props) => {
         </div>
         <div className="row">
           {notes.map((note) => {
-            return <NotesItem key={note._id} note={note} handleEditClick={() => {handleEditClick(note)}} showAlert={showAlert}/>;
+            return <NotesItem key={note._id} note={note} handleEditClick={() => {handleEditClick(note)}} setNotes={setNotes} showAlert={showAlert}/>;
           })}
         </div>
       </div>

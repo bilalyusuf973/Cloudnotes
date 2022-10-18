@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import NoteContext from '../context/notes/NoteContext';
 
 const Notepage = (props) => {
 
   const context = useContext(NoteContext);
   const {addNote} = context;
-  const [note, setNote] = useState({title: "", description: "", tag: ""});
-  const {showAlert} = props;
+  
+  const {note, setNote, showAlert} = props;
 
   const handleChange = () => {
     const title = document.getElementById("title").value;
@@ -48,7 +48,7 @@ const Notepage = (props) => {
   return (
     <div className='container'>
 
-      <h2>Create a new note</h2>
+      <h2>Create new note</h2>
         <div className="inputField">
           <input type="text" placeholder="Title" id='title' onChange={handleChange} minLength={3} required value={note.title} />
           <span className='iconSpan'><i className="fa-regular fa-copy copyIcon1" onClick={handleCopy1}/></span>  
@@ -64,7 +64,7 @@ const Notepage = (props) => {
         </div>
 
       <div className="select" >
-        <select name="format" id="tag" required onChange={handleChange}>
+        <select name="format" id="tag" required onChange={handleChange} value={note.tag}>
             <option value="" disabled selected>--- Tag ---</option>
             <option value="General">General</option>
             <option value="Personal">Personal</option>

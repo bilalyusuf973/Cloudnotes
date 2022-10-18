@@ -11,6 +11,7 @@ import FetchedNotes from "./components/FetchedNotes";
 
 function App() {
   const [alert, setAlert] = useState({type: "", msg: ""});
+  const [note, setNote] = useState({title: "", description: "", tag: ""});
 
   const showAlert = (type, msg)=>{
 
@@ -29,11 +30,11 @@ function App() {
           <Alert alert={alert}/>
           <div className="container">
           <Routes>
-            <Route path="/" element={<Notepage showAlert={showAlert}/>} />
+            <Route path="/" element={<Notepage note={note} setNote={setNote} showAlert={showAlert}/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/login" element={<Login showAlert={showAlert}/>} />
             <Route path="/signup" element={<Signup showAlert={showAlert}/>} />
-            <Route path="/allnotes" element={<FetchedNotes showAlert={showAlert}/>} />
+            <Route path="/allnotes" element={<FetchedNotes setNotes={setNote} showAlert={showAlert}/>} />
           </Routes>
           </div>
         </Router>

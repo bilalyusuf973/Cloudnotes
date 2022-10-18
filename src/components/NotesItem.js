@@ -1,14 +1,21 @@
 import React, { useContext } from 'react';
 import NoteContext from '../context/notes/NoteContext';
+import { useNavigate } from 'react-router-dom';
 
 const NotesItem = (props) => {
+    const navigate = useNavigate();
     const context = useContext(NoteContext);
-    const {note, handleEditClick, showAlert}  = props;
+    const {note, handleEditClick, setNotes, showAlert}  = props;
     const {deleteNote} = context;
 
     const handleDelete = () => {
       deleteNote(note._id);
       showAlert("success", "Note Deleted Successfully");
+    }
+
+    const OpenNote = () => {
+      setNotes(note);
+      navigate("/");
     }
 
   return (
@@ -20,7 +27,7 @@ const NotesItem = (props) => {
         <p className="card-text text-light">{note.description}</p>
 
         <div className="features">
-          <button className="BtnAddnote">Open</button>
+          <button className="BtnAddnote" onClick={OpenNote}>Open</button>
           <i className="fa-solid fa-pen-to-square mx-2 text-light" onClick={handleEditClick}></i>
           <i className="fa-solid fa-trash-can mx-2 text-light" onClick={handleDelete} ></i>
         </div>

@@ -118,7 +118,6 @@ select {
 }
 
 #title{
-  text-indent: 5px;
   margin-left: 9px;
   width: 96%;
   border: none;
@@ -271,7 +270,7 @@ option {
 }
 
 .nav-link{
-  margin: 0 5px;
+  margin: 3px 5px 3px 5px;
   border-radius: 5px;
   height: 40px;
   width: auto;
@@ -282,6 +281,8 @@ option {
 }
 
 .navBtn{
+  margin-top: 3px;
+  margin-bottom: 3px;
   margin-left: 5px;
   cursor: pointer;
   width: 6rem;
@@ -295,4 +296,8 @@ option {
 
 .navbar-nav{
   margin-left: auto;
+}
+
+.about{
+  margin-top: 6rem;
 }
