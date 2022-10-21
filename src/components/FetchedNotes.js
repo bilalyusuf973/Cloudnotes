@@ -97,7 +97,7 @@ const FetchedNotes = (props) => {
         </div>
       </div>
       <div className="my-3">
-        <h3>Your Notes</h3>
+        <h3>All Notes</h3>
         <div className="my-4">
           {notes.length === 0 && 'Please add a note to display here'}
         </div>
