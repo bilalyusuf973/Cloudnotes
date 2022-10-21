@@ -12,15 +12,16 @@ const Notepage = (props) => {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const tag = document.getElementById("tag").value;
+    const code = document.getElementById("codeArea").value;
 
-    setNote({title, description, tag});
+    setNote({title, description, tag, code});
   }
         
   const handleClick = (e) => {
     e.preventDefault();
     addNote(note);
     showAlert("success", "New Note Added Successfully");
-    setNote({title: "", description: "", tag: "--- Tag ---"})  
+    setNote({title: "", description: "", tag: "--- Tag ---", code: ""})  
   }
 
   const handleCopy1 = ()=>{
@@ -59,9 +60,7 @@ const Notepage = (props) => {
           <span className='iconSpan'><i className="fa-regular fa-copy copyIcon2" onClick={handleCopy2}/></span>  
         </div>
 
-        <div className="notesArea">
-          <textarea type="textarea" id='codeArea' className="codeArea" placeholder="Paste your code here"/>
-        </div>
+      <textarea type="textarea" id='codeArea' className="codeArea" placeholder="// Paste your code here" value={note.code} onChange={handleChange}/>
 
       <div className="select" >
         <select name="format" id="tag" required onChange={handleChange} value={note.tag}>
@@ -74,7 +73,7 @@ const Notepage = (props) => {
         </select>
       </div>
       
-      <button className='BtnAddnote' onClick={handleClick} disabled={note.title.length < 3 || note.description.length < 5 || note.tag === ""}>Add note</button>
+      <button className='BtnAddnote' onClick={handleClick} disabled={note.title.length < 3 || note.description.length < 5 || note.tag === "" || note.code.length < 1}>Add note</button>
     </div>
   )
 }

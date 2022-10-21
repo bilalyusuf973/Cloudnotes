@@ -110,7 +110,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 93%;
+  width: 94%;
   height: 3rem;
   background-color:  #232121;
   border-radius: 5px;
@@ -148,7 +148,7 @@ select {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border: 1px solid white;
-  width: 93%;
+  width: 94%;
 }
 
 .copyIcon1{
@@ -165,7 +165,7 @@ select {
   color: white;
 }
 
-.editTextarea, .editInput, #eCodeArea{
+.editTextarea, .editInput{
   height: auto;
   width: 100%;
   color: white;
@@ -245,24 +245,16 @@ option {
   color: #0860e4;
 }
 
-.notesArea{
-  align-content: center;
-  margin: 1.5rem 0;
-  border: 1px solid white;
-  width: 93%;
-  height: 40rem;
-  border-radius: 5px;
-}
-
 .codeArea{
   margin-top: 8px;
   background-color:  #232121;
   color: white;
   outline: none;
-  border: none;
-  width: 95%;
+  border: 1px solid white;
+  width: 94%;
   height: 39.2rem;
-  margin-left: 8px;
+  border-radius: 5px;
+  text-indent: 5px;
 }
 
 .card-title, .card-text{
@@ -300,4 +292,14 @@ option {
 
 .about{
   margin-top: 6rem;
+}
+
+#ecode{
+  height: 230px;
+  width: 100%;
+  color: white;
+  background-color: #2d2d2e;
+  border-radius: 4px;
+  text-indent: 3px;
+  font-size: 14px;
 }

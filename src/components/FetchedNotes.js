@@ -5,9 +5,9 @@ import NotesItem from "./NotesItem";
 
 const FetchedNotes = (props) => {
   const context = useContext(NoteContext);
-  const { notes, getNotes, editNote} = context;
+  const {notes, getNotes, editNote} = context;
   const {setNotes, showAlert} = props;
-  const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: ""});
+  const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: "", ecode: ""});
 
   const navigate = useNavigate();
 
@@ -25,21 +25,22 @@ const FetchedNotes = (props) => {
   const refClose = useRef(null);
   const handleEditClick = (currentNote) => {
     myRef.current.click();
-    setNote({id: currentNote._id, editTitle: currentNote.title, editDescription: currentNote.description, editTag: currentNote.tag});
+    setNote({id: currentNote._id, editTitle: currentNote.title, editDescription: currentNote.description, editTag: currentNote.tag, ecode: currentNote.code});
   }
 
   const handleChange = () => {
     const editTitle = document.getElementById("editTitle").value;
     const editDescription = document.getElementById("editDescription").value;
     const editTag = document.getElementById("editTag").value;
+    const ecode = document.getElementById("ecode").value;
     const id = note.id;
 
-    setNote({id, editTitle, editDescription, editTag});
+    setNote({id, editTitle, editDescription, editTag, ecode});
   }
   
   const handleClick = (e) => {
     refClose.current.click();
-    editNote(note.id, note.editTitle, note.editDescription, note.editTag);
+    editNote(note.id, note.editTitle, note.editDescription, note.editTag, note.ecode);
     showAlert("success", "Note Edited Successfully");
   }
 
@@ -71,7 +72,7 @@ const FetchedNotes = (props) => {
 
           <div className="enotesArea">
           <label htmlFor="code" className="form-label"> Code: </label><br />
-            <textarea type="textarea" id='eCodeArea' placeholder="Paste your code here"/>
+            <textarea type="textarea" id='ecode' placeholder="Paste your code here" value={note.ecode} onChange={handleChange}/>
           </div>
 
           <label htmlFor="tag" className="form-label"> Tag: </label><br/>
@@ -88,7 +89,7 @@ const FetchedNotes = (props) => {
               <button type="button" ref={refClose} className="btn btn-secondary" data-dismiss="modal">
                 Close
               </button>
-              <button type="button" className="BtnLogout" onClick={handleClick}>
+              <button type="button" className="BtnAddnote" onClick={handleClick}>
                 Update Note
               </button>
             </div>

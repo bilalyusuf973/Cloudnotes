@@ -11,7 +11,7 @@ import FetchedNotes from "./components/FetchedNotes";
 
 function App() {
   const [alert, setAlert] = useState({type: "", msg: ""});
-  const [note, setNote] = useState({title: "", description: "", tag: "--- Tag ---"});
+  const [note, setNote] = useState({title: "", description: "", tag: "--- Tag ---", code: ""});
 
   const showAlert = (type, msg)=>{
 
