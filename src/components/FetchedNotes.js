@@ -76,7 +76,7 @@ const FetchedNotes = (props) => {
           </div>
 
           <label htmlFor="tag" className="form-label"> Tag: </label><br/>
-          <select className="editSelect" id="editTag" onChange={handleChange} value={note.editTag}>
+          <select name="format" className="editSelect" id="editTag" onChange={handleChange} value={note.editTag}>
               <option value="Personal" name="Personal">Personal</option>
               <option value="Professional" name="Professional">Professional</option>
               <option value="General" name="General">General</option>
@@ -89,7 +89,7 @@ const FetchedNotes = (props) => {
               <button type="button" ref={refClose} className="btn btn-secondary" data-dismiss="modal">
                 Close
               </button>
-              <button type="button" className="BtnAddnote" onClick={handleClick}>
+              <button type="button" className="BtnUpdatenote" onClick={handleClick}>
                 Update Note
               </button>
             </div>

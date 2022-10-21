@@ -5,23 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #232121;
+  background-color: rgb(31, 33, 44);
   color: white;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-i {
-  cursor: pointer;
-  margin-bottom: 7px;
-  color: rgb(8, 99, 228);
-}
-
-select {
-  width: 40%;
 }
 
 .Form{
@@ -36,11 +21,11 @@ select {
 }
 
 .authForm{
-      background-color: #232121;
+      background-color: #202428;
       border: solid 1px white;
       border-radius: 5px;
       box-sizing: border-box;
-      color: #2c3338;
+      color: white;
       height: 40px;
       padding: 13px 15px;
       margin: 8px auto 0;
@@ -86,13 +71,7 @@ select {
   margin: 15px 0px;
 }
 
-.notesItem{
-  background-color: #232121;
-  color: white;
-  border: 2px solid white;
-}
-
-.BtnAddnote{
+.BtnUpdatenote{
   color: white;
   text-align: center;
   align-items: center;
@@ -103,18 +82,32 @@ select {
   width: 120px;
 }
 
+.BtnAddnote{
+  color: white;
+  text-align: center;
+  align-items: center;
+  background-color: #0860e4;
+  border-radius: 5px;
+  border: none;
+  height: 45px;
+  width: 120px;
+}
+
 .BtnAddnote:disabled{
   background-color: #7a7e85;
 }
+
 .inputField{
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 94%;
   height: 3rem;
-  background-color:  #232121;
+  outline: none;
+  background-color:  #202428;
   border-radius: 5px;
   border: 1px solid white;
+  margin: 1.3rem 0rem;
 }
 
 #title{
@@ -122,63 +115,39 @@ select {
   width: 96%;
   border: none;
   height: 90%;
-  background-color:  #232121;
+  background-color:  #202428;
   outline: none;
   color: white;
 }
 
 #description{
-  margin-top: 10px;
-  margin-left: 3px;
   text-indent: 5px;
-  width: 96%;
+  width: 94%;
   height: 11.8rem;
   outline: none;
-  border: none;
-  color: white;
-  background-color:  #232121;
-}
-
-.textareaField{
-  display: flex;
-  justify-content: space-between;
-  background-color:  #232121;
-  border-radius: 5px;
-  height: 13rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   border: 1px solid white;
-  width: 94%;
-}
-
-.copyIcon1{
-  font-size: 1.5rem;
-  margin-top: 8px;
-  margin-right: 6px;
+  border-top: none;
   color: white;
-}
-
-.copyIcon2{
-  margin-top: 8px;
-  font-size: 1.5rem;
-  margin-right: 6px;
-  color: white;
+  background-color:  #202428;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .editTextarea, .editInput{
   height: auto;
   width: 100%;
   color: white;
-  background-color: #2d2d2e;
+  background-color: #21252a;
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
 }
+
 .editSelect{
-  height: auto;
+  height: 2rem;
   width: 40%;
   color: white;
-  background-color: #2d2d2e;
+  background-color: #21252a;
   border-radius: 4px;
   font-size: 14px;
 }
@@ -194,7 +163,7 @@ select {
   outline:0;
   box-shadow:none;
   border:0!important;
-  background:  #232121;
+  background:  #202428;
   background-image: none;
   flex: 1;
   padding: 0 .5em;
@@ -218,13 +187,13 @@ option {
 }
 
 .select {
-  margin: 25px 0px;
+  margin: 1rem 0rem;
   position: relative;
   display: flex;
   width: 45%;
   height: auto;
   line-height: 3;
-  background:  #232121;
+  background:  #202428;
   overflow: hidden;
   border-radius: 5px;
   border: 1px solid white;
@@ -235,7 +204,7 @@ option {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background:  #232121;
+  background:  #202428;
   cursor:pointer;
   pointer-events:none;
   transition:.25s all ease;
@@ -246,15 +215,16 @@ option {
 }
 
 .codeArea{
-  margin-top: 8px;
-  background-color:  #232121;
+  background-color:  #202428;
   color: white;
   outline: none;
   border: 1px solid white;
   width: 94%;
   height: 39.2rem;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   text-indent: 5px;
+  border-top: none;
 }
 
 .card-title, .card-text{
@@ -298,8 +268,38 @@ option {
   height: 230px;
   width: 100%;
   color: white;
-  background-color: #2d2d2e;
+  background-color: #21252a;
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
+}
+
+.copydiv{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 94%;
+  height: 2.2rem;
+  background-color: #202428;
+  border: 1px solid white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.CopyIcon{
+  margin-right: 5px;
+  font-size: 1.3rem;
+  color: rgb(130, 161, 223);
+}
+
+.CopyIcon:hover{
+  color: white;
+}
+
+.bottomdiv{
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

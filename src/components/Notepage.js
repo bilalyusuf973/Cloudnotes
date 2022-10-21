@@ -31,7 +31,7 @@ const Notepage = (props) => {
       showAlert('success', 'Title Copied');
     }
     else{
-      showAlert('warning', 'Title is empty');
+      showAlert('warning', 'Empty field');
     }
   }
 
@@ -42,7 +42,17 @@ const Notepage = (props) => {
       showAlert('success', 'Description Copied');
     }
     else{
-      showAlert('warning', 'Description is empty');
+      showAlert('warning', 'Empty field');
+    }
+  }
+  const handleCopy3 = ()=>{
+    const copiedCode = document.getElementById('codeArea').value;
+    if(copiedCode !== ""){
+      navigator.clipboard.writeText(copiedCode);
+      showAlert('success', 'Code Copied');
+    }
+    else{
+      showAlert('warning', 'Empty field');
     }
   }
   
@@ -52,28 +62,37 @@ const Notepage = (props) => {
       <h2>Create new note</h2>
         <div className="inputField">
           <input type="text" placeholder="Title" id='title' onChange={handleChange} minLength={3} required value={note.title} />
-          <span className='iconSpan'><i className="fa-regular fa-copy copyIcon1" onClick={handleCopy1}/></span>  
+          <span className='iconSpan'><i className="fa-regular fa-copy CopyIcon" onClick={handleCopy1}/></span>  
         </div>
 
-        <div className="textareaField">
+        <div className="copydiv">
+          <i className="fa-regular fa-copy CopyIcon" onClick={handleCopy2}/>
+        </div>
         <textarea type="textarea" placeholder="Description" id='description' onChange={handleChange} minLength={5} required value={note.description}/>
-          <span className='iconSpan'><i className="fa-regular fa-copy copyIcon2" onClick={handleCopy2}/></span>  
-        </div>
 
-      <textarea type="textarea" id='codeArea' className="codeArea" placeholder="// Paste your code here" value={note.code} onChange={handleChange}/>
 
-      <div className="select" >
-        <select name="format" id="tag" required onChange={handleChange} value={note.tag}>
-            <option value="--- Tag ---" disabled >--- Tag ---</option>
-            <option value="General">General</option>
-            <option value="Personal">Personal</option>
-            <option value="Professional">Professional</option>
-            <option value="Special">Special</option>
-            <option value="Random">Random</option>
-        </select>
+      <div className="copydiv">
+        <i className="fa-regular fa-copy CopyIcon" onClick={handleCopy3}/>
       </div>
-      
-      <button className='BtnAddnote' onClick={handleClick} disabled={note.title.length < 3 || note.description.length < 5 || note.tag === "" || note.code.length < 1}>Add note</button>
+      <textarea type="textarea" id='codeArea' className="codeArea" required placeholder="// Paste your code here" value={note.code} onChange={handleChange}/>
+
+      <div className="bottomdiv">
+
+        <div className="select" >
+          <select name="format" id="tag" required onChange={handleChange} value={note.tag}>
+              <option value="--- Tag ---" disabled >--- Tag ---</option>
+              <option value="General">General</option>
+              <option value="Personal">Personal</option>
+              <option value="Professional">Professional</option>
+              <option value="Special">Special</option>
+              <option value="Random">Random</option>
+          </select>
+        </div>
+        
+        <button className='BtnAddnote' onClick={handleClick} disabled={note.title.length < 3 || note.description.length < 5 || note.tag === "" || note.code.length < 1}>Add note</button>
+        
+      </div>
+
     </div>
   )
 }
