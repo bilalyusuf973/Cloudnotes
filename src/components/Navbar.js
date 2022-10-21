@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       {(location.pathname !== "/login" && location.pathname !== "/signup") && <nav className="navbar navbar-expand-md bg-dark navbar-dark">
-        <Link className="navbar-brand text-white" to="/">
+        <Link className="navbar-brand text-light" to="/">
           <img src="cloudNotesIcon.png" width="40" height="30" className="d-inline-block align-top" alt=""/>
           Cloudnotes
         </Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className={`nav-link text-light ${location.pathname === "/" ? "bg-info" : ""}`} text-light aria-current="page" to="/">
+              <Link className={`nav-link text-light ${location.pathname === "/" ? "bg-info" : ""}`} aria-current="page" to="/">
                 Home
               </Link>
             </li>

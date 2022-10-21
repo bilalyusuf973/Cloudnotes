@@ -20,7 +20,7 @@ const Notepage = (props) => {
     e.preventDefault();
     addNote(note);
     showAlert("success", "New Note Added Successfully");
-    setNote({title: "", description: "", tag: ""})  
+    setNote({title: "", description: "", tag: "--- Tag ---"})  
   }
 
   const handleCopy1 = ()=>{
@@ -65,7 +65,7 @@ const Notepage = (props) => {
 
       <div className="select" >
         <select name="format" id="tag" required onChange={handleChange} value={note.tag}>
-            <option value="" disabled selected>--- Tag ---</option>
+            <option value="--- Tag ---" disabled >--- Tag ---</option>
             <option value="General">General</option>
             <option value="Personal">Personal</option>
             <option value="Professional">Professional</option>
