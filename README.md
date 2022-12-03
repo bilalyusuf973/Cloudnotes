@@ -1,3 +1,7 @@
+![loginpage](https://user-images.githubusercontent.com/111658408/197182166-11c4ee91-99ff-4985-a440-7a832cff96f3.jpg)
+![signuppage](https://user-images.githubusercontent.com/111658408/197182230-a9552c14-9af8-49c2-8fa7-34e56fee4188.jpg)
+![allnotes](https://user-images.githubusercontent.com/111658408/197182366-b67ec3a4-410e-44f7-a506-11f46618a496.jpg)
+![homepage](https://user-images.githubusercontent.com/111658408/197182381-2479f234-3f0e-4e2f-9a50-522e9e25b233.jpg)
 # Cloudnotes
 
 A web app made by using MERN stack to maintain important notes of a user.
