@@ -131,9 +131,9 @@ body {
   width: 94%;
   height: 3rem;
   outline: none;
-  background-color:  rgb(28, 27, 27);
+  background-color:  #343b43;
   border-radius: 5px;
-  border: 1px solid white;
+  border: none;
   margin: 1.3rem 0rem;
 }
 
@@ -142,7 +142,7 @@ body {
   width: 96%;
   border: none;
   height: 90%;
-  background-color:  rgb(28, 27, 27);
+  background-color:  #343b43;
   outline: none;
   color: white;
 }
@@ -152,19 +152,31 @@ body {
   width: 94%;
   height: 11.8rem;
   outline: none;
-  border: 1px solid white;
+  border: none;
   border-top: none;
   color: white;
-  background-color:  rgb(28, 27, 27);
+  background-color:  #343b43;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.editTextarea, .editInput{
-  height: auto;
+.editInput{
+  height: 40px;
   width: 100%;
   color: white;
-  background-color: rgb(28, 27, 27);
+  background-color: #171f27;
+  border: none;
+  border-radius: 4px;
+  text-indent: 3px;
+  font-size: 14px;
+}
+
+.editTextarea{
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: #171f27;
+  border: none;
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
@@ -174,7 +186,8 @@ body {
   height: 2rem;
   width: 40%;
   color: white;
-  background-color: rgb(28, 27, 27);
+  background-color: #171f27;
+  border: none;
   border-radius: 4px;
   font-size: 14px;
 }
@@ -190,7 +203,7 @@ body {
   outline:0;
   box-shadow:none;
   border:0!important;
-  background:  rgb(28, 27, 27);
+  background:  #343b43;
   background-image: none;
   flex: 1;
   padding: 0 .5em;
@@ -220,10 +233,10 @@ option {
   width: 45%;
   height: auto;
   line-height: 3;
-  background:  rgb(28, 27, 27);
+  background:  #343b43;
   overflow: hidden;
   border-radius: 5px;
-  border: 1px solid white;
+  border: none;
 }
 .select::after {
   content: '\25BC';
@@ -231,7 +244,7 @@ option {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background:  rgb(28, 27, 27);
+  background:  #262c33;
   cursor:pointer;
   pointer-events:none;
   transition:.25s all ease;
@@ -242,10 +255,10 @@ option {
 }
 
 .codeArea{
-  background-color:  rgb(28, 27, 27);
+  background-color:  #343b43;
   color: white;
   outline: none;
-  border: 1px solid white;
+  border: none;
   width: 94%;
   height: 39.2rem;
   border-bottom-left-radius: 5px;
@@ -284,7 +297,8 @@ option {
   height: 230px;
   width: 100%;
   color: white;
-  background-color: rgb(28, 27, 27);
+  border: none;
+  background-color: #171f27;
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
@@ -297,8 +311,8 @@ option {
   align-items: center;
   width: 94%;
   height: 2.2rem;
-  background-color: rgb(28, 27, 27);
-  border: 1px solid white;
+  background-color: #242a31;
+  border-bottom: 1px solid white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -378,8 +392,4 @@ i{
 
 .modalCloseBtn{
   color: rgb(195, 135, 241);
-}
-
-.editNoteHeading{
-  color: rgb(209, 161, 245);
 }
