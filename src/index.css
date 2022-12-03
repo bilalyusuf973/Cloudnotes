@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(31, 33, 44);
+  background-color: rgb(17, 24, 39);
   color: white;
 }
 
@@ -20,8 +20,35 @@ body {
   text-align: center;
 }
 
+.newNoteHeading{
+  color: rgb(210, 187, 228);
+}
+
+.navbar{
+  background-color: rgb(31 41 55);
+}
+
+.navbarBrandDiv{
+  display: flex;
+  color: rgb(224, 198, 244);
+}
+
+.navbar-link{
+  color: white;
+  margin: 10px 8px;
+}
+
+.navbar-link:hover{
+  color: rgb(184, 112, 243);
+}
+
+.navbar-nav{
+  align-items: center;
+}
+
+
 .authForm{
-      background-color: #202428;
+      background-color: rgb(28, 27, 27);
       border: solid 1px white;
       border-radius: 5px;
       box-sizing: border-box;
@@ -35,7 +62,7 @@ body {
 }
 
 .authButton{
-  background-color: #0860e4;
+  background-color: rgb(163, 74, 236);
   border-radius: 5px;
   box-sizing: border-box;
   color: white;
@@ -75,7 +102,7 @@ body {
   color: white;
   text-align: center;
   align-items: center;
-  background-color: #0860e4;
+  background-color: rgb(163, 74, 236);
   border-radius: 5px;
   border: none;
   height: 38px;
@@ -86,7 +113,7 @@ body {
   color: white;
   text-align: center;
   align-items: center;
-  background-color: #0860e4;
+  background-color: rgb(163, 74, 236);
   border-radius: 5px;
   border: none;
   height: 45px;
@@ -104,7 +131,7 @@ body {
   width: 94%;
   height: 3rem;
   outline: none;
-  background-color:  #202428;
+  background-color:  rgb(28, 27, 27);
   border-radius: 5px;
   border: 1px solid white;
   margin: 1.3rem 0rem;
@@ -115,7 +142,7 @@ body {
   width: 96%;
   border: none;
   height: 90%;
-  background-color:  #202428;
+  background-color:  rgb(28, 27, 27);
   outline: none;
   color: white;
 }
@@ -128,7 +155,7 @@ body {
   border: 1px solid white;
   border-top: none;
   color: white;
-  background-color:  #202428;
+  background-color:  rgb(28, 27, 27);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -137,7 +164,7 @@ body {
   height: auto;
   width: 100%;
   color: white;
-  background-color: #21252a;
+  background-color: rgb(28, 27, 27);
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
@@ -147,7 +174,7 @@ body {
   height: 2rem;
   width: 40%;
   color: white;
-  background-color: #21252a;
+  background-color: rgb(28, 27, 27);
   border-radius: 4px;
   font-size: 14px;
 }
@@ -163,7 +190,7 @@ body {
   outline:0;
   box-shadow:none;
   border:0!important;
-  background:  #202428;
+  background:  rgb(28, 27, 27);
   background-image: none;
   flex: 1;
   padding: 0 .5em;
@@ -193,7 +220,7 @@ option {
   width: 45%;
   height: auto;
   line-height: 3;
-  background:  #202428;
+  background:  rgb(28, 27, 27);
   overflow: hidden;
   border-radius: 5px;
   border: 1px solid white;
@@ -204,18 +231,18 @@ option {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background:  #202428;
+  background:  rgb(28, 27, 27);
   cursor:pointer;
   pointer-events:none;
   transition:.25s all ease;
   color: white;
 }
 .select:hover::after {
-  color: #0860e4;
+  color: rgb(163, 74, 236);
 }
 
 .codeArea{
-  background-color:  #202428;
+  background-color:  rgb(28, 27, 27);
   color: white;
   outline: none;
   border: 1px solid white;
@@ -231,17 +258,6 @@ option {
   color: black;
 }
 
-.nav-link{
-  margin: 3px 5px 3px 5px;
-  border-radius: 5px;
-  height: 40px;
-  width: auto;
-}
-
-.nav-link:hover, .navBtn:hover{
-  outline: 1px solid white;
-}
-
 .navBtn{
   margin-top: 3px;
   margin-bottom: 3px;
@@ -253,7 +269,7 @@ option {
   justify-content: center;
   align-content: center;
   border-radius: 5px;
-  background-color: #0860e4;
+  background-color: rgb(163, 74, 236);
 }
 
 .navbar-nav{
@@ -268,7 +284,7 @@ option {
   height: 230px;
   width: 100%;
   color: white;
-  background-color: #21252a;
+  background-color: rgb(28, 27, 27);
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
@@ -281,7 +297,7 @@ option {
   align-items: center;
   width: 94%;
   height: 2.2rem;
-  background-color: #202428;
+  background-color: rgb(28, 27, 27);
   border: 1px solid white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -290,11 +306,11 @@ option {
 .CopyIcon{
   margin-right: 5px;
   font-size: 1.3rem;
-  color: rgb(130, 161, 223);
+  color: white;
 }
 
-.CopyIcon:hover{
-  color: white;
+.CopyIcon:hover, .editicon:hover, .deleteicon:hover{
+  color: rgb(205, 142, 247);
 }
 
 .bottomdiv{
@@ -302,4 +318,68 @@ option {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+i{
+  cursor: pointer;
+}
+
+.editicon, .deleteicon{
+  color: white;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(31 41 55);
+  height: auto;
+  margin-top: 45vh;
+  padding: 1rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.footerBrand{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 7px;
+  margin-right: auto;
+}
+
+.footerTitle{
+  font-size: 25px;
+  color: white;
+}
+
+.contactIcons{
+  display: inline-flex;
+  padding: 7px;
+  margin-left: 20px;
+}
+
+.contactIcon{
+  margin: 0px 6px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.copyright{
+  color: grey;
+  font-size: medium;
+  padding: 7px;
+  margin-left: 20px;
+}
+
+.modalCloseBtn{
+  color: rgb(195, 135, 241);
+}
+
+.editNoteHeading{
+  color: rgb(209, 161, 245);
 }

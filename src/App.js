@@ -8,6 +8,7 @@ import NoteState from "./context/notes/NoteState";
 import { useState } from "react";
 import Notepage from "./components/Notepage";
 import FetchedNotes from "./components/FetchedNotes";
+import Footer from "./components/Footer";
 
 function App() {
   const [alert, setAlert] = useState({type: "", msg: ""});
@@ -37,6 +38,7 @@ function App() {
             <Route path="/allnotes" element={<FetchedNotes setNotes={setNote} showAlert={showAlert}/>} />
           </Routes>
           </div>
+          <Footer/>
         </Router>
       </NoteState>
     </>

@@ -28,8 +28,8 @@ const NotesItem = (props) => {
 
         <div className="features">
           <button className="BtnAddnote" onClick={OpenNote}>Open</button>
-          <i className="fa-solid fa-pen-to-square mx-2 text-light" onClick={handleEditClick}></i>
-          <i className="fa-solid fa-trash-can mx-2 text-light" onClick={handleDelete} ></i>
+          <i className="editicon fa-solid fa-pen-to-square mx-2" onClick={handleEditClick}></i>
+          <i className="deleteicon fa-solid fa-trash-can mx-2" onClick={handleDelete} ></i>
         </div>
 
       </div>

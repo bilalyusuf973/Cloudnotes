@@ -1,12 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import NoteContext from '../context/notes/NoteContext';
+import { useNavigate } from 'react-router-dom';
+// import SyntaxHighlighter from 'react-syntax-highlighter';
+// import { stackoverflowDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Notepage = (props) => {
 
+  const navigate = useNavigate();
   const context = useContext(NoteContext);
   const {addNote} = context;
   
   const {note, setNote, showAlert} = props;
+
+  useEffect(() => {
+    if(!localStorage.getItem('token')){
+      navigate("/login");
+    }
+  });
 
   const handleChange = () => {
     const title = document.getElementById("title").value;
@@ -22,6 +32,7 @@ const Notepage = (props) => {
     addNote(note);
     showAlert("success", "New Note Added Successfully");
     setNote({title: "", description: "", tag: "--- Tag ---", code: ""})  
+    navigate("/allnotes");
   }
 
   const handleCopy1 = ()=>{
@@ -59,7 +70,7 @@ const Notepage = (props) => {
   return (
     <div className='container'>
 
-      <h2>Create new note</h2>
+      <h2 className='newNoteHeading'>Create a new note</h2>
         <div className="inputField">
           <input type="text" placeholder="Title" id='title' onChange={handleChange} minLength={3} required value={note.title} />
           <span className='iconSpan'><i className="fa-regular fa-copy CopyIcon" onClick={handleCopy1}/></span>  
@@ -74,7 +85,17 @@ const Notepage = (props) => {
       <div className="copydiv">
         <i className="fa-regular fa-copy CopyIcon" onClick={handleCopy3}/>
       </div>
-      <textarea type="textarea" id='codeArea' className="codeArea" required placeholder="// Paste your code here" value={note.code} onChange={handleChange}/>
+      <textarea type="textarea" id='codeArea' className="codeArea" required placeholder="Paste your code here" value={note.code} onChange={handleChange}/>
+
+
+
+      {/* <div className="editor" contentEditable='true'>
+        <SyntaxHighlighter language="javascript" style={stackoverflowDark}  wrapLines='true' showLineNumbers wrapLongLines='true' customStyle={{  
+          height: "39.03rem",
+        }}>
+            {note.code}
+        </SyntaxHighlighter>
+      </div> */}
 
       <div className="bottomdiv">
 

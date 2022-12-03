@@ -44,7 +44,7 @@ const Signup = (props) => {
      setCredentials({name, email, password, cpassword});
   }
   return (
-    <div>
+    <div className='signupForm'>
         <form className="Form" onSubmit={handleSubmit}>
           <div className="divImage"><img className="authImage" src="/cloudNotesIcon.png" alt="icon" /></div>
         <h2 className="heading">Sign up</h2>

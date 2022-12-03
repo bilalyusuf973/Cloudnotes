@@ -25,11 +25,12 @@ const About = () => {
         Contact us --
       </h5>
       <p>
-        Email - bilalyusuf973@gmail.com <br />
-        Linked In - <a href="https://www.linkedin.com/in/bilal-yusuf-8a72a31b8/">linkedin.com/in/bilal-yusuf-8a72a31b8/</a><br />
-        Github - <a href="https://github.com/bilalyusuf973">github.com/bilalyusuf973</a>
+        Email ID - bilalyusuf973@gmail.com <br />
+        LinkedIn - <a href="https://www.linkedin.com/in/bilal-yusuf-8a72a31b8/">linkedin.com/in/bilal-yusuf-8a72a31b8/</a><br />
+        Github - <a href="https://github.com/bilalyusuf973">github.com/bilalyusuf973</a><br />
+        Instagram - <a href="https://www.instagram.com/bilalyusuf973/">instagram.com/bilalyusuf973/</a><br />
+        Twitter - <a href="https://twitter.com/bilalyusuf973">twitter.com/bilalyusuf973</a><br />
       </p>
-
     </div>
   )
 }

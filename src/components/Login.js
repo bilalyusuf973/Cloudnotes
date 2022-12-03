@@ -38,7 +38,7 @@ const Login = (props) => {
     }
 
   return (
-    <div>
+    <div className='loginForm'>
     <form className="Form" onSubmit={handleSubmit}>
     <div className="divImage"><img className="authImage" src="/cloudNotesIcon.png" alt="icon" /></div>
       <h2 className="heading">Log in</h2>
