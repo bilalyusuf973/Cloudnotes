@@ -1,7 +1,4 @@
-![loginpage](https://user-images.githubusercontent.com/111658408/197182166-11c4ee91-99ff-4985-a440-7a832cff96f3.jpg)
-![signuppage](https://user-images.githubusercontent.com/111658408/197182230-a9552c14-9af8-49c2-8fa7-34e56fee4188.jpg)
-![allnotes](https://user-images.githubusercontent.com/111658408/197182366-b67ec3a4-410e-44f7-a506-11f46618a496.jpg)
-![homepage](https://user-images.githubusercontent.com/111658408/197182381-2479f234-3f0e-4e2f-9a50-522e9e25b233.jpg)
+
 # Cloudnotes
 
 A web app made by using MERN stack to maintain important notes of a user.
@@ -23,3 +20,7 @@ This command will start the frontend and backend of the app at the same time.
 
 npm run both 
 
+![loginnew](https://user-images.githubusercontent.com/111658408/205447347-2fc58767-152b-422e-ac5f-ff0cd88e813c.jpg)
+![signupnew](https://user-images.githubusercontent.com/111658408/205447358-68a7d83a-79aa-4aa2-a423-a75d26e8ad5e.jpg)
+![allnotes](https://user-images.githubusercontent.com/111658408/205447376-aeb80c90-b646-46fc-9ce8-188bab4bb7f3.jpg)
+![homenew](https://user-images.githubusercontent.com/111658408/205447381-b766b66a-5dfe-4b04-861b-0dbe5aacb306.jpg)
