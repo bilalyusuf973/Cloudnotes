@@ -95,7 +95,6 @@ const Notepage = (props) => {
 
       <div className="copydiv">
         <div className="languageDiv">
-          Language :
           <select id="languageSelector" defaultValue="javascript" onChange={handleChange}>
             <option value="javascript">JavaScript</option>
             <option value="c">C</option>
