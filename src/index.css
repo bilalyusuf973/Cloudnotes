@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(17, 24, 39);
+  background-color: #1e1e1e;
   color: white;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .navbar{
-  background-color: rgb(31 41 55);
+  background-color: #242627;
 }
 
 .navbarBrandDiv{
@@ -48,7 +48,7 @@ body {
 
 
 .authForm{
-      background-color: #31373e;
+      background-color: #34373a;
       border: none;
       border-radius: 5px;
       box-sizing: border-box;
@@ -131,9 +131,9 @@ body {
   width: 94%;
   height: 3rem;
   outline: none;
-  background-color:  #343b43;
+  background-color:  #1e1e1e;
   border-radius: 5px;
-  border: none;
+  border: 1px solid gray;
   margin: 1.3rem 0rem;
 }
 
@@ -142,7 +142,7 @@ body {
   width: 96%;
   border: none;
   height: 90%;
-  background-color:  #343b43;
+  background-color:  #1e1e1e;
   outline: none;
   color: white;
 }
@@ -152,10 +152,10 @@ body {
   width: 94%;
   height: 11.8rem;
   outline: none;
-  border: none;
+  border: 1px solid gray;
   border-top: none;
   color: white;
-  background-color:  #343b43;
+  background-color:  #1e1e1e;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -164,7 +164,7 @@ body {
   height: 40px;
   width: 100%;
   color: white;
-  background-color: #171f27;
+  background-color: #242627;
   border: none;
   border-radius: 4px;
   text-indent: 3px;
@@ -175,7 +175,7 @@ body {
   height: 50px;
   width: 100%;
   color: white;
-  background-color: #171f27;
+  background-color: #242627;
   border: none;
   border-radius: 4px;
   text-indent: 3px;
@@ -186,7 +186,7 @@ body {
   height: 2rem;
   width: 40%;
   color: white;
-  background-color: #171f27;
+  background-color: #242627;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -202,8 +202,8 @@ body {
   appearance:none;
   outline:0;
   box-shadow:none;
-  border:0!important;
-  background:  #343b43;
+  border: none;
+  background:  #1e1e1e;
   background-image: none;
   flex: 1;
   padding: 0 .5em;
@@ -233,10 +233,10 @@ option {
   width: 45%;
   height: auto;
   line-height: 3;
-  background:  #343b43;
+  background:  #1e1e1e;
   overflow: hidden;
   border-radius: 5px;
-  border: none;
+  border: 1px solid gray;
 }
 .select::after {
   content: '\25BC';
@@ -244,27 +244,13 @@ option {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background:  #262c33;
   cursor:pointer;
   pointer-events:none;
   transition:.25s all ease;
   color: white;
 }
 .select:hover::after {
-  color: rgb(163, 74, 236);
-}
-
-.codeArea{
-  background-color:  #343b43;
-  color: white;
-  outline: none;
-  border: none;
-  width: 94%;
-  height: 39.2rem;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  text-indent: 5px;
-  border-top: none;
+  color: #52575c;
 }
 
 .card-title, .card-text{
@@ -298,7 +284,7 @@ option {
   width: 100%;
   color: white;
   border: none;
-  background-color: #171f27;
+  background-color: #242627;
   border-radius: 4px;
   text-indent: 3px;
   font-size: 14px;
@@ -311,8 +297,8 @@ option {
   align-items: center;
   width: 94%;
   height: 2.2rem;
-  background-color: #242a31;
-  border-bottom: 1px solid white;
+  background-color: #242627;
+  border: 1px solid gray;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -346,7 +332,7 @@ i{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(31 41 55);
+  background-color: #242627;
   height: auto;
   margin-top: 45vh;
   padding: 1rem;
@@ -391,5 +377,35 @@ i{
 }
 
 .modalCloseBtn{
-  color: rgb(195, 135, 241);
+  color: rgb(255, 255, 255);
+}
+
+.editorDiv{
+  height: 39.2rem;
+  width: 94%;
+  border: 1px solid gray;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.languageDiv{
+  margin-right: auto;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#languageSelector{
+  width: 12rem;
+  margin-left: 5px;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+
+.card{
+  background-color: #242627;
 }

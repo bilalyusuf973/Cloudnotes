@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import NoteContext from '../context/notes/NoteContext';
 import { useNavigate } from 'react-router-dom';
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { stackoverflowDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Editor from "@monaco-editor/react";
+import { useState } from 'react';
 
 const Notepage = (props) => {
 
@@ -11,6 +11,8 @@ const Notepage = (props) => {
   const {addNote} = context;
   
   const {note, setNote, showAlert} = props;
+
+  const [language, setLanguage] = useState("javascript");
 
   useEffect(() => {
     if(!localStorage.getItem('token')){
@@ -22,16 +24,25 @@ const Notepage = (props) => {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const tag = document.getElementById("tag").value;
-    const code = document.getElementById("codeArea").value;
+    const code = note.code;
+    setLanguage(document.getElementById('languageSelector').value);
 
     setNote({title, description, tag, code});
+  }
+
+  const handleEditorChange = (val) => {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const tag = document.getElementById("tag").value;
+
+      setNote({title, description, tag, code: val});
   }
         
   const handleClick = (e) => {
     e.preventDefault();
     addNote(note);
-    showAlert("success", "New Note Added Successfully");
-    setNote({title: "", description: "", tag: "--- Tag ---", code: ""})  
+    showAlert("success", "Note Added Successfully");
+    setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here"})  
     navigate("/allnotes");
   }
 
@@ -57,7 +68,7 @@ const Notepage = (props) => {
     }
   }
   const handleCopy3 = ()=>{
-    const copiedCode = document.getElementById('codeArea').value;
+    const copiedCode = note.code;
     if(copiedCode !== ""){
       navigator.clipboard.writeText(copiedCode);
       showAlert('success', 'Code Copied');
@@ -83,19 +94,39 @@ const Notepage = (props) => {
 
 
       <div className="copydiv">
+        <div className="languageDiv">
+          Language :
+          <select id="languageSelector" defaultValue="javascript" onChange={handleChange}>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="typescript">TypeScript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+            <option value="php">PHP</option>
+            <option value="ruby">Ruby</option>
+            <option value="go">Go</option>
+            <option value="swift">Swift</option>
+          </select>
+        </div>
         <i className="fa-regular fa-copy CopyIcon" onClick={handleCopy3}/>
       </div>
-      <textarea type="textarea" id='codeArea' className="codeArea" required placeholder="Paste your code here" value={note.code} onChange={handleChange}/>
 
-
-
-      {/* <div className="editor" contentEditable='true'>
-        <SyntaxHighlighter language="javascript" style={stackoverflowDark}  wrapLines='true' showLineNumbers wrapLongLines='true' customStyle={{  
-          height: "39.03rem",
-        }}>
-            {note.code}
-        </SyntaxHighlighter>
-      </div> */}
+      <div className="editorDiv">
+        <Editor theme='vs-dark' className='codeArea' 
+          height="39rem"
+          width="99.6%"
+          defaultLanguage='javascript'
+          language={language}
+          defaultValue="// Enter your code here"
+          value={note.code}
+          onChange={handleEditorChange}
+        />
+      </div>
 
       <div className="bottomdiv">
 
@@ -113,7 +144,6 @@ const Notepage = (props) => {
         <button className='BtnAddnote' onClick={handleClick} disabled={note.title.length < 3 || note.description.length < 5 || note.tag === "" || note.code.length < 1}>Add note</button>
         
       </div>
-
     </div>
   )
 }

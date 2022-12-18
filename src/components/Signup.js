@@ -22,17 +22,16 @@ const Signup = (props) => {
       });
 
       const json = await response.json();
-      console.log(json);
 
       if(json.success){
         //redirect
-        props.showAlert("success", "Your Account Created Successfully");
+        props.showAlert("success", "Account Created Successfully");
         localStorage.setItem('token', json.authToken);
         navigate("/");
 
       }
       else{
-        props.showAlert("danger", "Invalid Credentials");
+        props.showAlert("error", "Invalid Credentials");
       }
   }
 
@@ -49,19 +48,15 @@ const Signup = (props) => {
           <div className="divImage"><img className="authImage" src="/cloudNotesIcon.png" alt="icon" /></div>
         <h2 className="heading">Sign up</h2>
         <div className="mb-3">
-            {/* <label htmlFor="fullname" className="form-label">Full Name</label> */}
             <input type="text" className="form-control authForm" value={credentials.name} name="fullname" id="fullname" aria-describedby="fullname" onChange={handleChange} minLength={2} required placeholder='Full Name'/>
         </div>
         <div className="mb-3">
-            {/* <label htmlFor="email" className="form-label">Email address</label> */}
             <input type="email" className="form-control authForm" value={credentials.email} name="email" id="email" aria-describedby="emailHelp" onChange={handleChange} required placeholder='Email address'/>
         </div>
         <div className="mb-3">
-            {/* <label htmlFor="password" className="form-label">Password</label> */}
             <input type="password" className="form-control authForm" value={credentials.password} name="password" id="password" onChange={handleChange} minLength={8} required placeholder='Password'/>
         </div>
         <div className="mb-3">
-            {/* <label htmlFor="confirmPassword" className="form-label">Confirm Password</label> */}
             <input type="password" className="form-control authForm" value={credentials.cpassword} name="confirmPassword" id="confirmPassword" onChange={handleChange} minLength={8} required placeholder='Confirm Password'/>
         </div>
         <button type="submit" className="authButton">Sign Up</button>

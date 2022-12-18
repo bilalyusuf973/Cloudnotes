@@ -17,7 +17,6 @@ const Login = (props) => {
         });
 
         const json = await response.json();
-        console.log(json);
 
         if(json.success){
           //redirect
@@ -27,7 +26,7 @@ const Login = (props) => {
 
         }
         else{
-          props.showAlert("danger", "Invalid Credentials");
+          props.showAlert("error", "Invalid Credentials");
         }
     }
 
