@@ -48,8 +48,8 @@ body {
 
 
 .authForm{
-      background-color: #34373a;
-      border: none;
+      background-color: #1e1e1e;
+      border: 1px solid gray;
       border-radius: 5px;
       box-sizing: border-box;
       color: white;
