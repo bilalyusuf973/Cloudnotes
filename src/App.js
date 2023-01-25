@@ -22,7 +22,7 @@ function App() {
     <>
       <NoteState>
         <Router>
-          <Navbar/>
+          <Navbar showAlert={notify}/>
           <div className="container">
           <Routes>
             <Route path="/" element={<Notepage note={note} setNote={setNote} showAlert={notify}/>} />

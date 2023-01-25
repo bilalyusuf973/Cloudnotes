@@ -41,7 +41,7 @@ const Notepage = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
     addNote(note);
-    showAlert("success", "Note Added Successfully");
+    showAlert("success", "Note Added Successfully!");
     setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here"})  
     navigate("/allnotes");
   }
@@ -50,10 +50,10 @@ const Notepage = (props) => {
     const copiedTitle = document.getElementById("title").value;
     if(copiedTitle !== ""){
       navigator.clipboard.writeText(copiedTitle);
-      showAlert('success', 'Title Copied');
+      showAlert('success', 'Title Copied!');
     }
     else{
-      showAlert('warning', 'Empty field');
+      showAlert('warning', 'Empty field!');
     }
   }
 
@@ -61,20 +61,20 @@ const Notepage = (props) => {
     const copiedDescription = document.getElementById('description').value;
     if(copiedDescription !== ""){
       navigator.clipboard.writeText(copiedDescription);
-      showAlert('success', 'Description Copied');
+      showAlert('success', 'Description Copied!');
     }
     else{
-      showAlert('warning', 'Empty field');
+      showAlert('warning', 'Empty field!');
     }
   }
   const handleCopy3 = ()=>{
     const copiedCode = note.code;
     if(copiedCode !== ""){
       navigator.clipboard.writeText(copiedCode);
-      showAlert('success', 'Code Copied');
+      showAlert('success', 'Code Copied!');
     }
     else{
-      showAlert('warning', 'Empty field');
+      showAlert('warning', 'Empty field!');
     }
   }
   

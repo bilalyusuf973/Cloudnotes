@@ -41,7 +41,7 @@ const FetchedNotes = (props) => {
   const handleClick = (e) => {
     refClose.current.click();
     editNote(note.id, note.editTitle, note.editDescription, note.editTag, note.ecode);
-    showAlert("success", "Note Edited Successfully");
+    showAlert("success", "Note Edited Successfully!");
   }
 
   return (
