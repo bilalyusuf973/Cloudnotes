@@ -26,16 +26,19 @@ body {
 
 .navbar{
   background-color: #242627;
+  margin-bottom: 10vh;
 }
 
 .navbarBrandDiv{
   display: flex;
   color: rgb(224, 198, 244);
+  font-size: 25px;
 }
 
 .navbar-link{
   color: white;
   margin: 10px 8px;
+  padding: 8px;
 }
 
 .navbar-link:hover{
@@ -258,11 +261,11 @@ option {
 }
 
 .navBtn{
-  margin-top: 3px;
+  margin-top: 4px;
   margin-bottom: 3px;
   margin-left: 5px;
   cursor: pointer;
-  width: 6rem;
+  width: 9rem;
   height: 40px;
   display: grid;
   justify-content: center;
@@ -408,4 +411,13 @@ i{
 
 .card{
   background-color: #242627;
+}
+
+.highlight{
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.nav-item{
+  margin: 8px 0;
 }

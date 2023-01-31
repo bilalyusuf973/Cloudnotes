@@ -16,7 +16,7 @@ const Navbar = (props) => {
       {(location.pathname !== "/login" && location.pathname !== "/signup") && <nav className="navbar navbar-expand-md navbar-dark">
         <Link className="navbar-brand" to="/">
           <div className="navbarBrandDiv">
-            <img src="cloudNotesIcon.png" width="40" height="30" className="d-inline-block align-top" alt="Cloudnotes"/>
+            <img src="cloudNotesIcon.png" width="60" height="43" className="d-inline-block align-top" alt="Cloudnotes"/>
             <div className="navbarBrandTitle">
               <b>Cloudnotes</b>
             </div>
@@ -28,17 +28,17 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className= "navbar-link" style={{textDecoration: 'none'}} aria-current="page" to="/">
+              <Link className= {`navbar-link ${location.pathname === '/' ? "highlight" : ""}`} style={{textDecoration: 'none'}} aria-current="page" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className= "navbar-link" style={{textDecoration: 'none'}} to="/about">
-                 About us
+              <Link className= {`navbar-link ${location.pathname === '/about' ? "highlight" : ""}`} style={{textDecoration: 'none'}} to="/about">
+                 About Us
               </Link>
             </li>  
             <li className="nav-item">
-              <Link className="navbar-link" style={{textDecoration: 'none'}} to="/allnotes"> 
+              <Link className= {`navbar-link ${location.pathname === '/allnotes' ? "highlight" : ""}`} style={{textDecoration: 'none'}} to="/allnotes"> 
                 All notes 
               </Link> 
             </li> 
