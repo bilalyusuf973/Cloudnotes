@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1e1e1e;
+  background-color: #121212;
   color: white;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .newNoteHeading{
-  color: rgb(210, 187, 228);
+  color: #d3afff;
 }
 
 .navbar{
@@ -31,7 +31,7 @@ body {
 
 .navbarBrandDiv{
   display: flex;
-  color: rgb(224, 198, 244);
+  color: #cb93f6;
   font-size: 25px;
 }
 
