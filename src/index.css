@@ -256,8 +256,8 @@ option {
   color: #52575c;
 }
 
-.card-title, .card-text{
-  color: black;
+.card-title{
+  color: #2fadc9;
 }
 
 .navBtn{
