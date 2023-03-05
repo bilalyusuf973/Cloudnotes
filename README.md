@@ -20,8 +20,7 @@ This command will start the frontend and backend of the app at the same time.
 
 npm run both 
 
-![signuppage2](https://user-images.githubusercontent.com/111658408/208297716-a6f09115-8772-40dc-b0e6-6c9f745bb862.jpg)
-![loginpage2](https://user-images.githubusercontent.com/111658408/208297724-a295f714-eb17-4e98-952d-6288850ed251.jpg)
-![notespage](https://user-images.githubusercontent.com/111658408/208297247-aa59ecb9-81c6-48b2-b2a3-ec5d33411178.jpg)
-![homepage](https://user-images.githubusercontent.com/111658408/208297260-0aa1c03d-8704-48e1-8aac-4750ae2b5826.jpg)
-
+<img width="1067" alt="allnotes3" src="https://user-images.githubusercontent.com/111658408/222955655-efa9e1ad-90c3-4771-80c9-f07e0f98a9c2.png">
+<img width="1070" alt="notepage3" src="https://user-images.githubusercontent.com/111658408/222955667-837ad854-7f58-49ac-94a3-1c4b02af98ac.png">
+<img width="1060" alt="login3" src="https://user-images.githubusercontent.com/111658408/222955675-165ad8b6-6b3f-4373-b243-4487afaa9eaf.png">
+<img width="1049" alt="signup3" src="https://user-images.githubusercontent.com/111658408/222955684-f8cf0c85-9df2-4bbb-b4a1-7e7f83ff66e5.png">
