@@ -22,7 +22,7 @@ const Login = (props) => {
           //redirect
           props.showAlert("success", "Login Successful!");
           localStorage.setItem('token', json.authToken);
-          navigate("/");
+          navigate("/allnotes");
 
         }
         else{

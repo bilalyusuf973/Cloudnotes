@@ -27,7 +27,7 @@ const Signup = (props) => {
         //redirect
         props.showAlert("success", "Account Created Successfully!");
         localStorage.setItem('token', json.authToken);
-        navigate("/");
+        navigate("/allnotes");
 
       }
       else{

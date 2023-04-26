@@ -44,6 +44,10 @@ const FetchedNotes = (props) => {
     showAlert("success", "Note Edited Successfully!");
   }
 
+  const addnotesFunc = () => {
+    navigate("/");
+  }
+
   return (
     <>
       <button type="button" ref={myRef} className="d-none btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -97,15 +101,24 @@ const FetchedNotes = (props) => {
         </div>
       </div>
       <div className="my-3">
-        <h3>All Notes</h3>
-        <div className="my-4">
-          {notes.length === 0 && 'Please add a note to display here'}
+        <h3 className="my-4">All Notes</h3>
+        {notes.length === 0 && <div className="my-5">
+          <h6>Please add a note to display here...</h6>
+          <button className="BtnAddnote" onClick={addnotesFunc}>Add Notes</button>
+        </div>}
+        {notes.length !== 0 && <div className="row">
+          {notes.map((note) => {
+            return <NotesItem key={note._id} note={note} handleEditClick={() => {handleEditClick(note)}} setNotes={setNotes} showAlert={showAlert}/>;
+          })}
+        </div>}
+        {/* <div className="my-4">
+          {notes.length === 0 && 'Please add a note to display here...'}
         </div>
         <div className="row">
           {notes.map((note) => {
             return <NotesItem key={note._id} note={note} handleEditClick={() => {handleEditClick(note)}} setNotes={setNotes} showAlert={showAlert}/>;
           })}
-        </div>
+        </div> */}
       </div>
     </>
   );

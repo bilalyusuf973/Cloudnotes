@@ -28,8 +28,13 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
             <li className="nav-item">
+              <Link className= {`navbar-link ${location.pathname === '/allnotes' ? "highlight" : ""}`} style={{textDecoration: 'none'}} to="/allnotes"> 
+                All notes 
+              </Link> 
+            </li> 
+            <li className="nav-item">
               <Link className= {`navbar-link ${location.pathname === '/' ? "highlight" : ""}`} style={{textDecoration: 'none'}} aria-current="page" to="/">
-                Home
+                New Note
               </Link>
             </li>
             <li className="nav-item">
@@ -37,11 +42,6 @@ const Navbar = (props) => {
                  About Us
               </Link>
             </li>  
-            <li className="nav-item">
-              <Link className= {`navbar-link ${location.pathname === '/allnotes' ? "highlight" : ""}`} style={{textDecoration: 'none'}} to="/allnotes"> 
-                All notes 
-              </Link> 
-            </li> 
             <li className="navBtn " onClick={handleLogout}>
               Logout
             </li>
