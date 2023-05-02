@@ -3,6 +3,7 @@ import NoteContext from '../context/notes/NoteContext';
 import { useNavigate } from 'react-router-dom';
 import Editor from "@monaco-editor/react";
 import { useState } from 'react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const Notepage = (props) => {
 
@@ -47,35 +48,23 @@ const Notepage = (props) => {
   }
 
   const handleCopy1 = ()=>{
-    const copiedTitle = document.getElementById("title").value;
-    if(copiedTitle !== ""){
-      navigator.clipboard.writeText(copiedTitle);
+    if(note.title !== "")
       showAlert('success', 'Title Copied!');
-    }
-    else{
+    else
       showAlert('warning', 'Empty field!');
-    }
   }
 
   const handleCopy2 = ()=>{
-    const copiedDescription = document.getElementById('description').value;
-    if(copiedDescription !== ""){
-      navigator.clipboard.writeText(copiedDescription);
+    if(note.description !== "")
       showAlert('success', 'Description Copied!');
-    }
-    else{
+    else
       showAlert('warning', 'Empty field!');
-    }
   }
   const handleCopy3 = ()=>{
-    const copiedCode = note.code;
-    if(copiedCode !== ""){
-      navigator.clipboard.writeText(copiedCode);
+    if(note.code !== "")
       showAlert('success', 'Code Copied!');
-    }
-    else{
+    else
       showAlert('warning', 'Empty field!');
-    }
   }
   
   return (
@@ -84,11 +73,19 @@ const Notepage = (props) => {
       <h2 className='newNoteHeading'>Create a new note</h2>
         <div className="inputField">
           <input type="text" placeholder="Title" id='title' onChange={handleChange} minLength={3} required value={note.title} />
-          <span className='iconSpan'><i className="fa-regular fa-copy CopyIcon" onClick={handleCopy1}/></span>  
+          <span className='iconSpan'>        
+            <CopyToClipboard text={note.title}
+            onCopy={handleCopy1}>
+              <i className="fa-regular fa-copy CopyIcon"/>
+            </CopyToClipboard>
+          </span>  
         </div>
 
         <div className="copydiv">
-          <i className="fa-regular fa-copy CopyIcon" onClick={handleCopy2}/>
+          <CopyToClipboard text={note.description}
+            onCopy={handleCopy2}>
+            <i className="fa-regular fa-copy CopyIcon"/>
+          </CopyToClipboard>
         </div>
         <textarea type="textarea" placeholder="Description" id='description' onChange={handleChange} minLength={5} required value={note.description}/>
 
@@ -112,7 +109,10 @@ const Notepage = (props) => {
             <option value="swift">Swift</option>
           </select>
         </div>
-        <i className="fa-regular fa-copy CopyIcon" onClick={handleCopy3}/>
+        <CopyToClipboard text={note.code}
+          onCopy={handleCopy3}>
+          <i className="fa-regular fa-copy CopyIcon"/>
+        </CopyToClipboard>
       </div>
 
       <div className="editorDiv">

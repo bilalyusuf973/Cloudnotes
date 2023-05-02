@@ -29,12 +29,6 @@ body {
   margin-bottom: 10vh;
 }
 
-.navbarBrandDiv{
-  display: flex;
-  color: #dfbafb;
-  font-size: 25px;
-}
-
 .navbar-link{
   color: white;
   margin: 10px 8px;
@@ -420,4 +414,29 @@ i{
 
 .nav-item{
   margin: 8px 0;
+}
+
+@media screen and (max-width: 768px){
+  .brandIcon{
+    width: 40px;
+    height: 28px;
+  }
+  
+  .navbarBrandDiv{
+    display: flex;
+    color: #dfbafb;
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 768px){
+  .brandIcon{
+    width: 60px;
+    height: 43px;
+  }
+  
+  .navbarBrandDiv{
+    display: flex;
+    color: #dfbafb;
+    font-size: 25px;
+  }
 }
