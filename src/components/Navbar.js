@@ -15,7 +15,7 @@ const Navbar = (props) => {
   return (
     <>
       {(location.pathname !== "/login" && location.pathname !== "/signup" && location.pathname !== "/forgotpassword") && <nav className="navbar navbar-expand-md navbar-dark">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/allnotes">
           <div className="navbarBrandDiv">
             <img src="cloudNotesIcon.png" className="d-inline-block align-top brandIcon" alt="Cloudnotes"/>
             <div className="navbarBrandTitle">
