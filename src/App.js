@@ -7,6 +7,7 @@ import NoteState from "./context/notes/NoteState";
 import { useState } from "react";
 import Notepage from "./components/Notepage";
 import FetchedNotes from "./components/FetchedNotes";
+import ForgotPass from "./components/ForgotPass";
 import Footer from "./components/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login showAlert={notify}/>} />
             <Route path="/signup" element={<Signup showAlert={notify}/>} />
             <Route path="/allnotes" element={<FetchedNotes setNotes={setNote} showAlert={notify}/>} />
+            <Route path="/forgotpassword" element={<ForgotPass showAlert={notify}/>} />
           </Routes>
           <ToastContainer position="top-center" autoClose={600} hideProgressBar={false} newestOnTop={true} closeOnClick rtl={false} draggable theme="colored"/>
           </div>

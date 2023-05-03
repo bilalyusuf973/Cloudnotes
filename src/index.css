@@ -45,17 +45,17 @@ body {
 
 
 .authForm{
-      background-color: #1e1e1e;
-      border: 1px solid gray;
-      border-radius: 5px;
-      box-sizing: border-box;
-      color: white;
-      height: 40px;
-      padding: 13px 15px;
-      margin: 8px auto 0;
-      max-width: 320px;
-      width: 95%;
-      font-size: 16px;
+  background-color: #1e1e1e;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  height: 40px;
+  padding: 13px 15px;
+  margin: 8px auto 0;
+  max-width: 320px;
+  width: 95%;
+  font-size: 16px;
 }
 
 .authButton{
@@ -88,7 +88,7 @@ body {
   height: auto;
 }
 
-.credetials{
+.credentials{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,6 +416,11 @@ i{
   margin: 8px 0;
 }
 
+.navbarBrandDiv{
+  display: flex;
+  color: #dfbafb;
+}
+
 @media screen and (max-width: 768px){
   .brandIcon{
     width: 40px;
@@ -423,11 +428,10 @@ i{
   }
   
   .navbarBrandDiv{
-    display: flex;
-    color: #dfbafb;
     font-size: 17px;
   }
 }
+
 @media screen and (min-width: 768px){
   .brandIcon{
     width: 60px;
@@ -435,8 +439,27 @@ i{
   }
   
   .navbarBrandDiv{
-    display: flex;
-    color: #dfbafb;
     font-size: 25px;
   }
+}
+
+#DOB{
+  color-scheme: dark;
+  color: #6c757d;
+  content: "DD";
+}
+
+.forgotIcon{
+  text-align: center;
+  font-size: 50px;
+  color: #e53c2e;
+}
+
+.authLinks{
+  color: gray;
+  text-decoration: none;
+}
+.authLinks:hover{
+  color: gray;
+  text-decoration: none;
 }

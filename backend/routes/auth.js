@@ -22,16 +22,12 @@ router.post('/createuser',[
       return res.status(400).json({ errors: errors.array() });
     }
 
-    let success = true;
-
     try{
       // check whether a user with the same email already exists or not?
         let user = await User.findOne({email: req.body.email});
 
-        if(user){
-            success = false;
-            return res.status(400).json({success, error: "Sorry a user with the same email already exists"});
-        }
+        if(user)
+            return res.status(400).json({success: false, error: "Sorry! User with the same email already exists"});
 
         const salt = await bcrypt.genSalt(10);
         const secPass = await bcrypt.hash(req.body.password, salt);
@@ -39,6 +35,7 @@ router.post('/createuser',[
         user = await User.create({
         name: req.body.name,
         email: req.body.email,
+        dob: req.body.dob,
         password: secPass
         });
 
@@ -50,11 +47,11 @@ router.post('/createuser',[
 
         const authToken = jwt.sign(data, JWT_SECRET);
 
-        res.json({success, authToken});
+        res.json({success: true, authToken});
     }
     catch(error){
         console.error(error.message);
-        res.status(500).send("Internal Server Error!");
+        res.status(500).json({success: false, error: "Internal Server Error!"});
 
     }
  });
@@ -75,16 +72,13 @@ router.post('/login',[
     const {email, password} = req.body;
     try{
         let user = await User.findOne({email});
-        let success = true;
-        if(!user){
-            success = false;
-            return res.status(400).json({success, error: "Please try to login with correct credentials"});
-        }
+
+        if(!user)
+            return res.status(400).json({success: false, error: "Invalid Credentials!"});
 
         const passwordCompare = await bcrypt.compare(password, user.password);
         if(!passwordCompare){
-          success = false;
-          return res.status(400).json({success, error: "Please try to login with correct credentials"});
+          return res.status(400).json({success: false, error: "Invalid Credentials!"});
         }
 
         const data = {
@@ -95,11 +89,11 @@ router.post('/login',[
 
         const authToken = jwt.sign(data, JWT_SECRET);
 
-        res.json({success, authToken});
+        res.json({success: true, authToken});
     }
     catch(error){
         console.error(error.message);
-        res.status(500).send("Internal Server Error!");
+        res.status(500).json({success: false, error: "Internal Server Error!"});
     }
  });
 
@@ -117,6 +111,47 @@ router.post('/getuser', fetchuser, async (req, res) => {
     catch(error){
         console.error(error.message);
         res.status(500).send("Internal Server Error!");
+    }
+ });
+
+
+//ROUTE 4: Change password of the user using : POST '/api/auth/newpassword'.
+
+router.post('/newpassword',[
+  body('email', 'Enter a valid email').isEmail(),
+  body('password', 'Password cannot be blank').exists()],
+   async (req, res) => {
+    // check for errors and if there are errors then show them
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const {email, dob, password} = req.body;
+    try{
+        let user = await User.findOne({email});
+        if(!user)
+            return res.status(400).json({success: false, error: "User doesn't exist"});
+
+        if(user.dob === dob){
+          const salt = await bcrypt.genSalt(10);
+          const secPass = await bcrypt.hash(password, salt);
+          
+          const data = await User.updateOne({email: email},{
+            $set: {
+              password: secPass
+            }
+          })
+          console.log(data);
+          return res.json({success: true});
+        }
+        else{
+          return res.status(400).json({success: false, error: "Invalid Credentials"});
+        }
+    }
+    catch(error){
+        console.error(error.message);
+        res.status(500).json({success: false, error: "Internal Server Error!"});
     }
  });
 

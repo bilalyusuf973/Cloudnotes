@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
 
@@ -26,10 +27,10 @@ const About = () => {
       </h5>
       <p>
         Email ID - bilalyusuf973@gmail.com <br />
-        LinkedIn - <a href="https://www.linkedin.com/in/bilal-yusuf-8a72a31b8/">linkedin.com/in/bilal-yusuf-8a72a31b8/</a><br />
-        Github - <a href="https://github.com/bilalyusuf973">github.com/bilalyusuf973</a><br />
-        Instagram - <a href="https://www.instagram.com/bilalyusuf973/">instagram.com/bilalyusuf973/</a><br />
-        Twitter - <a href="https://twitter.com/bilalyusuf973">twitter.com/bilalyusuf973</a><br />
+        LinkedIn - <Link to="https://www.linkedin.com/in/bilal-yusuf-8a72a31b8/">linkedin.com/in/bilal-yusuf-8a72a31b8/</Link><br />
+        Github - <Link to="https://github.com/bilalyusuf973">github.com/bilalyusuf973</Link><br />
+        Instagram - <Link to="https://www.instagram.com/bilalyusuf973/">instagram.com/bilalyusuf973/</Link><br />
+        Twitter - <Link to="https://twitter.com/bilalyusuf973">twitter.com/bilalyusuf973</Link><br />
       </p>
     </div>
   )
