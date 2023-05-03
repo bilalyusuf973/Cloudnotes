@@ -111,14 +111,6 @@ const FetchedNotes = (props) => {
             return <NotesItem key={note._id} note={note} handleEditClick={() => {handleEditClick(note)}} setNotes={setNotes} showAlert={showAlert}/>;
           })}
         </div>}
-        {/* <div className="my-4">
-          {notes.length === 0 && 'Please add a note to display here...'}
-        </div>
-        <div className="row">
-          {notes.map((note) => {
-            return <NotesItem key={note._id} note={note} handleEditClick={() => {handleEditClick(note)}} setNotes={setNotes} showAlert={showAlert}/>;
-          })}
-        </div> */}
       </div>
     </>
   );

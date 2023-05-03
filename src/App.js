@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [note, setNote] = useState({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here"});
+  const host = "http://localhost:5000";
 
   const notify = (type, msg) => {
     toast(msg, {type: `${type}`, toastId: `${type}`});
@@ -21,15 +22,15 @@ function App() {
 
   return (
     <>
-      <NoteState>
+      <NoteState host={host}>
         <Router>
           <Navbar setNote={setNote} showAlert={notify}/>
           <div className="container">
           <Routes>
             <Route path="/" element={<Notepage note={note} setNote={setNote} showAlert={notify}/>} />
             <Route path="/about" element={<About/>} />
-            <Route path="/login" element={<Login showAlert={notify}/>} />
-            <Route path="/signup" element={<Signup showAlert={notify}/>} />
+            <Route path="/login" element={<Login host={host} showAlert={notify}/>} />
+            <Route path="/signup" element={<Signup host={host} showAlert={notify}/>} />
             <Route path="/allnotes" element={<FetchedNotes setNotes={setNote} showAlert={notify}/>} />
             <Route path="/forgotpassword" element={<ForgotPass showAlert={notify}/>} />
           </Routes>

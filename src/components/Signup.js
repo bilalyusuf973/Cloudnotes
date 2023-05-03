@@ -15,7 +15,7 @@ const Signup = (props) => {
         return props.showAlert("warning", "Confirm Your Password Correctly");
       }
       //API call
-      const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      const response = await fetch(`${props.host}/api/auth/createuser`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
