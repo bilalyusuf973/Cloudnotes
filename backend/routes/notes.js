@@ -16,14 +16,14 @@ router.post('/newnote', fetchuser, [
         return res.status(400).json({ errors: errors.array() });
     }
 
-    try {
-        
+    try {     
         const note = await Notes.create({
             user: req.user.id,
             title: req.body.title,
             description: req.body.description,
             tag: req.body.tag,
-            code: req.body.code
+            code: req.body.code,
+            lang: req.body.lang
         });
 
         res.json(note);
@@ -57,7 +57,7 @@ router.put('/updatenote/:id', fetchuser, async (req, res)=>{
 
     try {
 
-        const {title, description, tag, code} = req.body;
+        const {title, description, tag, code, lang} = req.body;
 
         const newNote = {};
     
@@ -65,6 +65,7 @@ router.put('/updatenote/:id', fetchuser, async (req, res)=>{
         if(description) {newNote.description = description};
         if(tag) {newNote.tag = tag};
         if(code) {newNote.code = code};
+        if(lang) {newNote.lang = lang};
     
         //find note in the database with a corresponding id to be updated
         let note = await Notes.findById(req.params.id);

@@ -25,6 +25,10 @@ const NotesSchema = new Schema({
     code: {
         type: String,
         required: true
+    },
+    lang: {
+        type: String,
+        required: true
     }
 });
 

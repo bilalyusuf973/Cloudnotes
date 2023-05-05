@@ -1,12 +1,19 @@
-body {
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #121212;
   color: white;
+}
+
+.authButton, .credentials, .footer, .footerBrand, .languageDiv, .langTagDiv, .langDiv, .tagDiv, .editDeleteIcons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Form{
@@ -69,9 +76,6 @@ body {
   max-width: 320px;
   width: 95%;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
   outline-color: white;
 }
@@ -89,9 +93,6 @@ body {
 }
 
 .credentials{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 15px 0px;
 }
 
@@ -106,7 +107,7 @@ body {
   width: 120px;
 }
 
-.BtnAddnote{
+.BtnAddnote, .BtnOpennote{
   color: white;
   text-align: center;
   align-items: center;
@@ -119,6 +120,10 @@ body {
 
 .BtnAddnote:disabled{
   background-color: #7a7e85;
+}
+
+.BtnOpennote{
+  margin: 0 6px 0 6px;
 }
 
 .inputField{
@@ -135,7 +140,7 @@ body {
 }
 
 #title{
-  margin-left: 9px;
+  padding-left: 8px;
   width: 96%;
   border: none;
   height: 90%;
@@ -145,7 +150,8 @@ body {
 }
 
 #description{
-  text-indent: 5px;
+  padding-left: 8px;
+  padding-top: 8px;
   width: 94%;
   height: 11.8rem;
   outline: none;
@@ -164,24 +170,24 @@ body {
   background-color: #242627;
   border: none;
   border-radius: 4px;
-  text-indent: 3px;
   font-size: 14px;
+  padding-left: 5px;
 }
 
 .editTextarea{
-  height: 50px;
+  height: 80px;
   width: 100%;
   color: white;
   background-color: #242627;
   border: none;
   border-radius: 4px;
-  text-indent: 3px;
   font-size: 14px;
+  padding-left: 5px;
 }
 
-.editSelect{
+.editSelect, #languageEditor{
   height: 2rem;
-  width: 40%;
+  width: 100%;
   color: white;
   background-color: #242627;
   border: none;
@@ -189,8 +195,6 @@ body {
   font-size: 14px;
 }
 
-
-/* Select box code */
 
 #tag {
   -webkit-appearance:none;
@@ -207,7 +211,6 @@ body {
   color: white;
   cursor:pointer;
   font-size: 1em;
-  font-family: 'Open Sans', sans-serif;
 }
 select::-ms-expand {
   display: none;
@@ -252,6 +255,7 @@ option {
 
 .card-title{
   color: #2fadc9;
+  margin: 0 6px;
 }
 
 .navBtn{
@@ -283,7 +287,8 @@ option {
   border: none;
   background-color: #242627;
   border-radius: 4px;
-  text-indent: 3px;
+  padding-left: 5px;
+  padding-top: 10px;
   font-size: 14px;
 }
 
@@ -306,7 +311,7 @@ option {
   color: white;
 }
 
-.CopyIcon:hover, .editicon:hover, .deleteicon:hover{
+.CopyIcon:hover, .editIcon:hover, .deleteIcon:hover{
   color: rgb(205, 142, 247);
 }
 
@@ -321,14 +326,12 @@ i{
   cursor: pointer;
 }
 
-.editicon, .deleteicon{
-  color: white;
+.editIcon, .deleteIcon{
+  color: #2fadc9;
+  font-size: 20px;
 }
 
 .footer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #242627;
   height: auto;
   margin-top: 53.3vh;
@@ -338,9 +341,6 @@ i{
 }
 
 .footerBrand{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   flex-wrap: wrap;
   box-sizing: border-box;
@@ -389,18 +389,18 @@ i{
 .languageDiv{
   margin-right: auto;
   margin-left: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
 }
 
 #languageSelector{
   width: 12rem;
+  height: 70%;
   margin-left: 5px;
   background-color: #1e1e1e;
   color: white;
   border-radius: 5px;
   outline: none;
+  font-size: 14px;
 }
 
 .card{
@@ -462,4 +462,62 @@ i{
 .authLinks:hover{
   color: gray;
   text-decoration: none;
+}
+
+.noteTitleDiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.langTagDiv{
+  flex-wrap: wrap;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #6c757d;
+  margin: 0 6px;
+}
+
+.langIcon{
+  font-size: 7px;
+  color: #f9702c;
+}
+
+.tagIcon{
+  font-size: 9px;
+  color: #4ba4f8;
+}
+
+.features{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editLang, .editTag{
+  width: 40%;
+}
+
+.editLangTag{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.noteDescription{
+  margin: 0 6px 15px 6px;
+}
+
+.editDeleteIcons{
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+.modal-body{
+  color: #adadad;
+}
+
+.langDiv{
+  margin-right: 10px;
 }

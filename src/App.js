@@ -13,7 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [note, setNote] = useState({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here"});
+  const [note, setNote] = useState({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here", lang: "cpp"});
   const host = "http://localhost:5000";
 
   const notify = (type, msg) => {

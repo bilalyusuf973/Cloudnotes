@@ -39,7 +39,7 @@ const NoteState = (props) => {
   
 
   //edit a note
-  const editNote = async (noteID, title, description, tag, code) => {
+  const editNote = async (noteID, title, description, tag, code, lang) => {
     //API call
     await fetch(`${props.host}/api/notes/updatenote/${noteID}`, {
       method: 'PUT',
@@ -47,7 +47,7 @@ const NoteState = (props) => {
         'Content-Type': 'application/json',
         'auth-token': localStorage.getItem('token')
       },
-      body: JSON.stringify({title, description, tag, code})
+      body: JSON.stringify({title, description, tag, code, lang})
     });
   }
 

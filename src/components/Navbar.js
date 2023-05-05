@@ -6,7 +6,7 @@ const Navbar = (props) => {
   const handleLogout = ()=>{
     localStorage.removeItem('token');
     navigate("/login");
-    props.setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here"})
+    props.setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here", lang: "cpp"})
     props.showAlert('success', 'Logout Successful!');
   }
 
@@ -34,7 +34,7 @@ const Navbar = (props) => {
               </Link> 
             </li> 
             <li className="nav-item">
-              <Link className= {`navbar-link ${location.pathname === '/' ? "highlight" : ""}`} style={{textDecoration: 'none'}} aria-current="page" to="/">
+              <Link className= {`navbar-link ${location.pathname === '/' ? "highlight" : ""}`} style={{textDecoration: 'none'}} aria-current="page" to="/" onClick={() => {props.setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here", lang: "cpp"})}}>
                 New Note
               </Link>
             </li>

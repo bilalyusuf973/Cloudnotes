@@ -7,7 +7,7 @@ const FetchedNotes = (props) => {
   const context = useContext(NoteContext);
   const {notes, getNotes, editNote} = context;
   const {setNotes, showAlert} = props;
-  const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: "", ecode: ""});
+  const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: "", ecode: "", eLang: ""});
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const FetchedNotes = (props) => {
   const refClose = useRef(null);
   const handleEditClick = (currentNote) => {
     myRef.current.click();
-    setNote({id: currentNote._id, editTitle: currentNote.title, editDescription: currentNote.description, editTag: currentNote.tag, ecode: currentNote.code});
+    setNote({id: currentNote._id, editTitle: currentNote.title, editDescription: currentNote.description, editTag: currentNote.tag, ecode: currentNote.code, eLang: currentNote.lang});
   }
 
   const handleChange = () => {
@@ -33,18 +33,20 @@ const FetchedNotes = (props) => {
     const editDescription = document.getElementById("editDescription").value;
     const editTag = document.getElementById("editTag").value;
     const ecode = document.getElementById("ecode").value;
+    const eLang = document.getElementById("languageEditor").value;
     const id = note.id;
 
-    setNote({id, editTitle, editDescription, editTag, ecode});
+    setNote({id, editTitle, editDescription, editTag, ecode, eLang});
   }
   
   const handleClick = (e) => {
     refClose.current.click();
-    editNote(note.id, note.editTitle, note.editDescription, note.editTag, note.ecode);
+    editNote(note.id, note.editTitle, note.editDescription, note.editTag, note.ecode, note.eLang);
     showAlert("success", "Note Edited Successfully!");
   }
 
   const addnotesFunc = () => {
+    setNotes({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here", lang: "cpp"})
     navigate("/");
   }
 
@@ -79,14 +81,39 @@ const FetchedNotes = (props) => {
             <textarea type="textarea" id='ecode' placeholder="Paste your code here" value={note.ecode} onChange={handleChange}/>
           </div>
 
-          <label htmlFor="tag" className="form-label"> Tag: </label><br/>
-          <select name="format" className="editSelect" id="editTag" onChange={handleChange} value={note.editTag}>
-              <option value="Personal" name="Personal">Personal</option>
-              <option value="Professional" name="Professional">Professional</option>
-              <option value="General" name="General">General</option>
-              <option value="Special" name="Special">Special</option>
-              <option value="Random" name="Random">Random</option>
-          </select><br/>
+          <div className="editLangTag">
+            <div className="editLang">
+              <label htmlFor="lang" className="form-label"> Language: </label><br/>
+              <select id="languageEditor" value={note.eLang} onChange={handleChange}>
+                <option value="cpp">C++</option>
+                <option value="javascript">JavaScript</option>
+                <option value="c">C</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="typescript">TypeScript</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="json">JSON</option>
+                <option value="xml">XML</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</option>
+                <option value="go">Go</option>
+                <option value="swift">Swift</option>
+              </select>            
+            </div>
+            <div className="editTag">
+              <label htmlFor="tag" className="form-label"> Tag: </label><br/>
+              <select name="format" className="editSelect" id="editTag" onChange={handleChange} value={note.editTag}>
+                  <option value="Personal" name="Personal">Personal</option>
+                  <option value="Professional" name="Professional">Professional</option>
+                  <option value="General" name="General">General</option>
+                  <option value="Special" name="Special">Special</option>
+                  <option value="Random" name="Random">Random</option>
+              </select><br/>
+            </div>
+          </div>
+
+
           </form>
             </div>
             <div className="modal-footer">

@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import NoteContext from '../context/notes/NoteContext';
 import { useNavigate } from 'react-router-dom';
 import Editor from "@monaco-editor/react";
-import { useState } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const Notepage = (props) => {
@@ -10,10 +9,7 @@ const Notepage = (props) => {
   const navigate = useNavigate();
   const context = useContext(NoteContext);
   const {addNote} = context;
-  
   const {note, setNote, showAlert} = props;
-
-  const [language, setLanguage] = useState("javascript");
 
   useEffect(() => {
     if(!localStorage.getItem('token')){
@@ -26,24 +22,25 @@ const Notepage = (props) => {
     const description = document.getElementById("description").value;
     const tag = document.getElementById("tag").value;
     const code = note.code;
-    setLanguage(document.getElementById('languageSelector').value);
+    const lang = document.getElementById('languageSelector').value
 
-    setNote({title, description, tag, code});
+    setNote({title, description, tag, code, lang});
   }
 
   const handleEditorChange = (val) => {
       const title = document.getElementById("title").value;
       const description = document.getElementById("description").value;
       const tag = document.getElementById("tag").value;
+      const lang = document.getElementById("languageSelector").value;
 
-      setNote({title, description, tag, code: val});
+      setNote({title, description, tag, code: val, lang});
   }
         
   const handleClick = (e) => {
     e.preventDefault();
     addNote(note);
     showAlert("success", "Note Added Successfully!");
-    setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here"})  
+    setNote({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here", lang: "cpp"})  
     navigate("/allnotes");
   }
 
@@ -92,10 +89,10 @@ const Notepage = (props) => {
 
       <div className="copydiv">
         <div className="languageDiv">
-          <select id="languageSelector" defaultValue="javascript" onChange={handleChange}>
+          <select id="languageSelector" value={note.lang} onChange={handleChange}>
+            <option value="cpp">C++</option>
             <option value="javascript">JavaScript</option>
             <option value="c">C</option>
-            <option value="cpp">C++</option>
             <option value="python">Python</option>
             <option value="java">Java</option>
             <option value="typescript">TypeScript</option>
@@ -119,8 +116,8 @@ const Notepage = (props) => {
         <Editor theme='vs-dark' className='codeArea' 
           height="39rem"
           width="99.6%"
-          defaultLanguage='javascript'
-          language={language}
+          defaultLanguage={note.lang}
+          language={note.lang}
           defaultValue="// Enter your code here"
           value={note.code}
           onChange={handleEditorChange}
