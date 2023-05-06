@@ -10,7 +10,7 @@ body{
   color: white;
 }
 
-.authButton, .credentials, .footer, .footerBrand, .languageDiv, .langTagDiv, .langDiv, .tagDiv, .editDeleteIcons{
+.navbarBrandDiv, .navBtn, .authButton, .credentials, .footer, .footerBrand, .langTagDiv, .langDiv, .tagDiv, .editDeleteIcons{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +36,10 @@ body{
   margin-bottom: 10vh;
 }
 
+.navbar-brand{
+  margin-right: 0;
+}
+
 .navbar-link{
   color: white;
   margin: 10px 8px;
@@ -45,11 +49,6 @@ body{
 .navbar-link:hover{
   color: rgb(184, 112, 243);
 }
-
-.navbar-nav{
-  align-items: center;
-}
-
 
 .authForm{
   background-color: #1e1e1e;
@@ -141,7 +140,7 @@ body{
 
 #title{
   padding-left: 8px;
-  width: 96%;
+  width: 100%;
   border: none;
   height: 90%;
   background-color:  #1e1e1e;
@@ -265,9 +264,6 @@ option {
   cursor: pointer;
   width: 9rem;
   height: 40px;
-  display: grid;
-  justify-content: center;
-  align-content: center;
   border-radius: 5px;
   background-color: rgb(163, 74, 236);
 }
@@ -387,13 +383,16 @@ i{
 }
 
 .languageDiv{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin-right: auto;
   margin-left: 5px;
   height: 100%;
+  width: 52%;
 }
 
 #languageSelector{
-  width: 12rem;
   height: 70%;
   margin-left: 5px;
   background-color: #1e1e1e;
@@ -407,13 +406,22 @@ i{
   background-color: #242627;
 }
 
-.highlight{
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
 .nav-item{
   margin: 8px 0;
+}
+
+.navbar-toggler{
+  border: none;
+  outline: none;
+  font-size: 24px;
+  color: #9e9e9e;
+}
+
+.navbar-toggler:focus{
+  border: none;
+  outline: none;
+  font-size: 24px;
+  color: #9e9e9e;
 }
 
 .navbarBrandDiv{
@@ -423,12 +431,39 @@ i{
 
 @media screen and (max-width: 768px){
   .brandIcon{
-    width: 40px;
-    height: 28px;
+    width: 53px;
+    height: 39px;
   }
-  
+
+  #languageSelector{
+    width: 100%;
+  }
+
+  .navbar{
+    flex-direction: row-reverse;
+  }
+
+  .navbar-nav{
+    margin-top: 17px;
+  }
+
+  .navbar-link{
+    margin: 10px 0;
+  }
+
   .navbarBrandDiv{
-    font-size: 17px;
+    font-size: 21px;
+  }
+
+  .navbarBrandTitle{
+    display: none;
+  }
+
+  .navBtn{
+    display: none;
+  }
+  .navBtnCollapsed{
+    display: block;
   }
 }
 
@@ -437,10 +472,44 @@ i{
     width: 60px;
     height: 43px;
   }
+
+  #languageSelector{
+    width: 40%;
+  }
   
+  .navbar{
+    flex-direction:row;
+  }
+
+  .navbar-nav{
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .navbar-link{
+    margin: 10px 8px;
+  }
+
   .navbarBrandDiv{
     font-size: 25px;
   }
+
+  .highlight{
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .navbarBrandTitle{
+    display: block;
+  }
+
+  .navBtn{
+    display: flex;
+  }
+  .navBtnCollapsed{
+    display: none;
+  }
+
 }
 
 #DOB{

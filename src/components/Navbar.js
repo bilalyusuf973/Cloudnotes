@@ -43,8 +43,11 @@ const Navbar = (props) => {
                  About Us
               </Link>
             </li>  
-            <li className="navBtn " onClick={handleLogout}>
-              Logout
+            <li className="navBtn" onClick={handleLogout}>
+            <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>&nbsp;&nbsp;Logout
+            </li>
+            <li className="nav-item navBtnCollapsed" onClick={handleLogout}>
+            &nbsp;&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;Logout
             </li>
           </ul>
         </div>  

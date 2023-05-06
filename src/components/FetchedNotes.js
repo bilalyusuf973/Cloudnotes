@@ -86,11 +86,11 @@ const FetchedNotes = (props) => {
               <label htmlFor="lang" className="form-label"> Language: </label><br/>
               <select id="languageEditor" value={note.eLang} onChange={handleChange}>
                 <option value="cpp">C++</option>
-                <option value="javascript">JavaScript</option>
+                <option value="javascript">Javascript</option>
                 <option value="c">C</option>
                 <option value="python">Python</option>
                 <option value="java">Java</option>
-                <option value="typescript">TypeScript</option>
+                <option value="typescript">Typescript</option>
                 <option value="html">HTML</option>
                 <option value="css">CSS</option>
                 <option value="json">JSON</option>
