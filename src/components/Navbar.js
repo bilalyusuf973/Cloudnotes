@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -14,10 +13,8 @@ const Navbar = (props) => {
   }
 
   const fetchInitial = () => {
-    return localStorage.getItem('cloudnotes_username').charAt(0).toUpperCase();
+    return localStorage.getItem('cloudnotes_username')[0].toUpperCase();
   }
-
-  const letter = fetchInitial();
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
@@ -51,7 +48,7 @@ const Navbar = (props) => {
           </li>  
           <li className="nav-item" onClick={handleLogout}>
             <div className="fullprofile">
-              <div className="profileImage">{letter}</div>
+              <div className="profileImage">{fetchInitial()}</div>
               <div className="username">{localStorage.getItem('cloudnotes_username')}</div>
             </div>
           </li>
@@ -62,7 +59,7 @@ const Navbar = (props) => {
             &nbsp;&nbsp;<i className="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;Logout
           </li>
           <li className="nav-item shortprofile">
-            {letter}
+            {fetchInitial()}
           </li>
           <div className="showUsername">
             <div className="triangle"></div>

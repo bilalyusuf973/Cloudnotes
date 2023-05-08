@@ -13,7 +13,7 @@ const Notepage = (props) => {
   const {note, setNote, showAlert} = props;
 
   useEffect(() => {
-    if(!localStorage.getItem('token')){
+    if(!localStorage.getItem('token') || !localStorage.getItem('cloudnotes_username')){
       navigate("/login");
     }
   });
@@ -56,7 +56,7 @@ const Notepage = (props) => {
   
   return (
     <>
-      <Navbar setNote={setNote} showAlert={showAlert}/>
+      {localStorage.getItem('token') && localStorage.getItem('cloudnotes_username') && <Navbar setNote={setNote} showAlert={showAlert}/>}
       <div className='container'>
         <h2 className='newNoteHeading'>Create a new note</h2>
           <div className="inputField">
