@@ -56,9 +56,7 @@ router.get('/fetchallnotes', fetchuser, async (req, res)=>{
 router.put('/updatenote/:id', fetchuser, async (req, res)=>{
 
     try {
-
         const {title, description, tag, code, lang} = req.body;
-
         const newNote = {};
     
         if(title) {newNote.title = title};
@@ -93,7 +91,6 @@ router.put('/updatenote/:id', fetchuser, async (req, res)=>{
 router.delete('/deletenote/:id', fetchuser, async (req, res)=>{
 
     try {
-
         //find note in the database with a corresponding id to be deleted
         let note = await Notes.findById(req.params.id);
         if(!note){return res.status(404).send("Not Found!")};
@@ -104,7 +101,6 @@ router.delete('/deletenote/:id', fetchuser, async (req, res)=>{
         }
 
         note = await Notes.findByIdAndDelete(req.params.id);
-
 
         res.json({"Success" : "Note has been deleted"});   
 

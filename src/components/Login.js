@@ -22,6 +22,7 @@ const Login = (props) => {
           //redirect
           props.showAlert("success", "Login Successful!");
           localStorage.setItem('token', json.authToken);
+          localStorage.setItem('cloudnotes_username', json.username);
           navigate("/allnotes");
         }
         else{
@@ -29,14 +30,12 @@ const Login = (props) => {
         }
     }
 
-    const handleChange = ()=>{
-       const email = document.getElementById("email").value;
-       const password = document.getElementById("password").value;
-       setCredentials({email, password});
+    const handleChange = (e)=>{
+       setCredentials({...credentials, [e.target.id]: e.target.value});
     }
 
   return (
-    <div className='loginForm'>
+    <div className='container loginForm'>
       <form className="Form" onSubmit={handleSubmit}>
       <div className="divImage"><img className="authImage" src="/cloudNotesIcon.png" alt="icon" /></div>
         <h2 className="heading">Log in</h2>

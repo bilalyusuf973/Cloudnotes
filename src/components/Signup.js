@@ -3,14 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({name: "", email: "", password: "", cpassword: ""});
+  const [dob, setDOB] = useState("");
   const navigate = useNavigate();
 
-  const [dob, setDOB] = useState("");
-
   const handleSubmit = async (e)=>{
-
       e.preventDefault();
-
       if(credentials.password !== credentials.cpassword){
         return props.showAlert("warning", "Confirm Your Password Correctly");
       }
@@ -29,6 +26,7 @@ const Signup = (props) => {
         //redirect
         props.showAlert("success", "Account Created Successfully!");
         localStorage.setItem('token', json.authToken);
+        localStorage.setItem('cloudnotes_username', json.username);
         navigate("/allnotes");
       }
       else{
@@ -36,12 +34,8 @@ const Signup = (props) => {
       }
   }
 
-  const handleChange = ()=>{
-     const name = document.getElementById("fullname").value;
-     const email = document.getElementById("email").value;
-     const password = document.getElementById("password").value;
-     const cpassword = document.getElementById("confirmPassword").value;
-     setCredentials({name, email, password, cpassword});
+  const handleChange = (e)=>{
+     setCredentials({...credentials, [e.target.id]: e.target.value});
   }
 
   const onBlurFunc = (e) => {
@@ -51,12 +45,12 @@ const Signup = (props) => {
   }
 
   return (
-    <div className='signupForm'>
+    <div className='container signupForm'>
         <form className="Form" onSubmit={handleSubmit}>
           <div className="divImage"><img className="authImage" src="/cloudNotesIcon.png" alt="icon" /></div>
         <h2 className="heading">Sign up</h2>
         <div className="mb-3">
-            <input type="text" className="form-control authForm" value={credentials.name} name="fullname" id="fullname" aria-describedby="fullname" onChange={handleChange} minLength={2} required placeholder='Full Name'/>
+            <input type="text" className="form-control authForm" value={credentials.name} name="fullname" id="name" aria-describedby="fullname" onChange={handleChange} minLength={2} required placeholder='Full Name'/>
         </div>
         <div className="mb-3">
             <input type="email" className="form-control authForm" value={credentials.email} name="email" id="email" aria-describedby="emailHelp" onChange={handleChange} required placeholder='Email address'/>
@@ -69,7 +63,7 @@ const Signup = (props) => {
             <input type="password" className="form-control authForm" value={credentials.password} name="password" id="password" onChange={handleChange} minLength={8} required placeholder='Password'/>
         </div>
         <div className="mb-3">
-            <input type="password" className="form-control authForm" value={credentials.cpassword} name="confirmPassword" id="confirmPassword" onChange={handleChange} minLength={8} required placeholder='Confirm Password'/>
+            <input type="password" className="form-control authForm" value={credentials.cpassword} name="confirmPassword" id="cpassword" onChange={handleChange} minLength={8} required placeholder='Confirm Password'/>
         </div>
         <button type="submit" className="authButton">Sign Up</button>
         </form>

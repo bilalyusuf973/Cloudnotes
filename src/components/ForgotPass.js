@@ -6,13 +6,8 @@ const ForgotPass = (props) => {
     const [dob, setDOB] = useState("");
     const navigate = useNavigate();
 
-    const handleChange = () => {
-        const email = document.querySelector("#email").value;
-        const dob = document.querySelector("#dob").value;
-        const password = document.querySelector("#password").value;
-        const cpassword = document.querySelector("#cpassword").value;
-
-        setCredentials({email, dob, password, cpassword});
+    const handleChange = (e) => {
+        setCredentials({...credentials, [e.target.id]: e.target.value});
     }
 
     const handleSubmit = async (e) => {
@@ -49,7 +44,7 @@ const ForgotPass = (props) => {
     }
 
   return (
-    <div className='newPassword'>
+    <div className='container newPassword'>
       <form className="Form" onSubmit={handleSubmit}>
       <i className="my-2 fa-solid fa-circle-exclamation forgotIcon"></i>
         <h2 className="heading">Forgot Password</h2>

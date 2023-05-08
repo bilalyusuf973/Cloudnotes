@@ -1,0 +1,678 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
+  body{
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #121212;
+    color: white;
+  }
+  
+  .navbarBrandDiv, .authButton, .credentials, .footer, .footerBrand, .langTagDiv, .editorDiv, .editCodeArea, .langDiv, .tagDiv, .editDeleteIcons, .profileImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    justify-content: center;
+  }
+  
+  .heading{
+    text-align: center;
+  }
+  
+  .navbar{
+    background-color: #242627;
+    margin-bottom: 10vh;
+  }
+  
+  .navbar-brand{
+    margin-right: 0;
+  }
+  
+  .navbar-link{
+    color: white;
+    margin: 10px 8px;
+    padding: 8px;
+  }
+  
+  .navbar-link:hover{
+    color: rgb(196, 134, 247);
+  }
+  
+  .authForm{
+    background-color: #1e1e1e;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    height: 40px;
+    padding: 13px 15px;
+    margin: 8px auto 0;
+    max-width: 320px;
+    width: 95%;
+    font-size: 16px;
+  }
+  
+  .authButton{
+    background-color: rgb(163, 74, 236);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    height: 40px;
+    padding: 13px 15px;
+    margin: 8px auto 0;
+    max-width: 320px;
+    width: 95%;
+    font-size: 16px;
+    border: none;
+    outline-color: white;
+  }
+  
+  .authImage{
+    width: 100%;
+    height: auto;
+  
+  }
+  
+  .divImage{
+    width: 80px;
+    margin: 8px auto 0;
+    height: auto;
+  }
+  
+  .credentials{
+    margin: 15px 0px;
+  }
+  
+  .BtnUpdatenote{
+    color: white;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(163, 74, 236);
+    border-radius: 5px;
+    border: none;
+    height: 38px;
+    width: 120px;
+  }
+  
+  .BtnAddnote, .BtnOpennote{
+    color: white;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(163, 74, 236);
+    border-radius: 5px;
+    border: none;
+    height: 45px;
+    width: 120px;
+  }
+  
+  .BtnAddnote:disabled{
+    background-color: #7a7e85;
+  }
+  
+  .BtnOpennote{
+    margin: 0 6px 0 6px;
+  }
+  
+  .inputField{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    height: 3rem;
+    outline: none;
+    background-color:  #1e1e1e;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 1.3rem 0rem;
+  }
+  
+  #title{
+    padding-left: 8px;
+    width: 100%;
+    border: none;
+    height: 90%;
+    background-color:  #1e1e1e;
+    outline: none;
+    color: white;
+  }
+  
+  #description{
+    padding-left: 8px;
+    padding-top: 8px;
+    width: 94%;
+    height: 11.8rem;
+    outline: none;
+    border: 1px solid gray;
+    border-top: none;
+    color: white;
+    background-color:  #1e1e1e;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .editInput{
+    height: 40px;
+    width: 100%;
+    color: white;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  
+  .editTextarea{
+    height: 80px;
+    width: 100%;
+    color: white;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  
+  .editSelect, #eLang{
+    height: 2rem;
+    width: 100%;
+    color: white;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  
+  #tag {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border: none;
+    background:  #1e1e1e;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color: white;
+    cursor:pointer;
+    font-size: 1em;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select:required:invalid {
+    color: gray;
+  }
+  option[value=""][disabled] {
+    color: gray;
+  }
+  option {
+    color: white;
+  }
+  
+  .select {
+    margin: 1rem 0rem;
+    position: relative;
+    display: flex;
+    width: 45%;
+    height: auto;
+    line-height: 3;
+    background:  #1e1e1e;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+    color: white;
+  }
+  .select:hover::after {
+    color: #52575c;
+  }
+  
+  .card-title{
+    color: #2fadc9;
+    margin: 0 6px;
+  }
+  
+  .navBtn{
+    margin-top: 4px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    cursor: pointer;
+    width: 9rem;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(163, 74, 236);
+  }
+  
+  .about{
+    margin-top: 6rem;
+  }
+  
+  #ecode{
+    height: 230px;
+    width: 100%;
+    color: white;
+    border: none;
+    background-color: #242627;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  .copydiv{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 94%;
+    height: 2.2rem;
+    background-color: #242627;
+    border: 1px solid gray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .CopyIcon{
+    margin-right: 5px;
+    font-size: 1.3rem;
+    color: white;
+  }
+  
+  .CopyIcon:hover, .editIcon:hover, .deleteIcon:hover{
+    color: rgb(205, 142, 247);
+  }
+  
+  .bottomdiv{
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  i{
+    cursor: pointer;
+  }
+  
+  .editIcon, .deleteIcon{
+    color: #2fadc9;
+    font-size: 20px;
+  }
+  
+  .footer{
+    background-color: #242627;
+    height: auto;
+    margin-top: 53.3vh;
+    padding: 1rem;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+  
+  .footerBrand{
+    cursor: pointer;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 7px;
+    margin-right: auto;
+  }
+  
+  .footerTitle{
+    font-size: 25px;
+    color: white;
+  }
+  
+  .contactIcons{
+    display: inline-flex;
+    padding: 7px;
+    margin-left: 20px;
+  }
+  
+  .contactIcon{
+    margin: 0px 6px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .copyright{
+    color: grey;
+    font-size: medium;
+    padding: 7px;
+    margin-left: 20px;
+  }
+  
+  .modalCloseBtn{
+    color: rgb(255, 255, 255);
+  }
+  
+  .editorDiv{
+    height: 39.2rem;
+    width: 94%;
+    border: 1px solid gray;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .languageDiv{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 5px;
+    height: 100%;
+    width: 52%;
+  }
+  
+  #lang{
+    height: 70%;
+    margin-left: 5px;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .card{
+    background-color: #242627;
+  }
+  
+  .navbar-toggler{
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: #9e9e9e;
+  }
+  
+  .navbar-toggler:focus{
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: #9e9e9e;
+  }
+  
+  .navbarBrandDiv{
+    display: flex;
+    color: #d6a6fd;
+  }
+  
+  .brandIcon{
+    width: 60px;
+    height: 43px;
+  }
+  
+  @media screen and (max-width: 768px){
+  
+    #lang{
+      width: 100%;
+    }
+  
+    .navbar{
+      flex-direction: row-reverse;
+    }
+  
+    .navbar-nav{
+      margin-top: 17px;
+    }
+  
+    .nav-item{
+      padding: 8px 0;
+      border-top: 1px solid rgba(255,255,255,.15);
+    }
+  
+    .navbar-link{
+      margin: 10px 0;
+    }
+  
+    .navbarBrandDiv{
+      font-size: 21px;
+    }
+  
+    .navbarBrandTitle{
+      display: none;
+    }
+  
+    .navBtn{
+      display: none;
+    }
+  
+    .navBtnCollapsed{
+      display: block;
+    }
+    
+    .fullprofile{
+      display: flex;
+      align-items: center;
+    }
+  
+    .shortprofile{
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 768px){
+  
+    #lang{
+      width: 40%;
+    }
+    
+    .navbar{
+      flex-direction:row;
+    }
+  
+    .navbar-nav{
+      align-items: center;
+      margin: 0 0 0 auto;
+    }
+  
+    .nav-item{
+      border-top: none;
+      margin: 8px 0;
+    }
+  
+    .navbar-link{
+      margin: 10px 8px;
+    }
+  
+    .navbarBrandDiv{
+      font-size: 25px;
+    }
+  
+    .navbarBrandTitle{
+      display: block;
+    }
+  
+    .navBtn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .navBtnCollapsed{
+      display: none;
+    }
+  
+    .fullprofile{
+      display: none;
+    }
+  
+    .shortprofile{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+  }
+  
+  #DOB{
+    color-scheme: dark;
+    color: #6c757d;
+    content: "DD";
+  }
+  
+  .forgotIcon{
+    text-align: center;
+    font-size: 50px;
+    color: #e53c2e;
+  }
+  
+  .authLinks{
+    color: gray;
+    text-decoration: none;
+  }
+  
+  .authLinks:hover{
+    color: gray;
+    text-decoration: none;
+  }
+  
+  .noteTitleDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .langTagDiv{
+    flex-wrap: wrap;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #6c757d;
+    margin: 0 6px;
+  }
+  
+  .langIcon{
+    font-size: 7px;
+    color: #f9702c;
+  }
+  
+  .tagIcon{
+    font-size: 9px;
+    color: #4ba4f8;
+  }
+  
+  .features{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .editLang, .editTag{
+    width: 40%;
+  }
+  
+  .editLangTag{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .noteDescription{
+    margin: 0 6px 15px 6px;
+  }
+  
+  .editDeleteIcons{
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+  
+  .modal-body{
+    color: #adadad;
+  }
+  
+  .langDiv, .tagDiv, .profileImage, .shortprofile{
+    cursor: pointer;
+  }
+  
+  .langDiv{
+    margin-right: 10px;
+  }
+  
+  .editCodeArea{
+    border-radius: 4px;
+    height: 23.2rem;
+    background-color: #1e1e1e;
+  }
+  
+  .profileImage{
+    background-color: #e53c2e;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    color: white;
+    font-size: 16px;
+    margin-left: 7px;
+    margin-right: 4px;
+  }
+
+  .shortprofile{
+    background-color: #e53c2e;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: white;
+    font-size: 20px;
+    margin-left: 14px;
+  }
+  
+  .showUsername{
+    display: none;
+    width: 100px;
+    position: absolute;
+    top: 42px;
+    left: auto;
+    right: 16px;
+  }
+
+  .triangle, .anchoredName{
+    background-color: #282f37;
+  }
+
+  .triangle {
+    position: relative;
+    top: 1px;
+    width: 14px;
+    height: 8px;
+    margin: 0 7px 0 auto;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  }
+
+  .anchoredName{
+    border-radius: 5px;
+    padding: 5px 0 8px 6px;
+  }
+
+  .mb-0{
+    font-weight: lighter;
+    font-size: 12px;
+  }
+
+  strong{
+    font-weight: bolder;
+    font-size: 13px;
+  }
+
+  .shortprofile:hover + .showUsername{
+    display: block;
+  }

@@ -4,13 +4,13 @@ const Footer = () => {
   return (
     <div className='footer'>
 
-        <div className="footerBrand">
-          <img src="cloudNotesIcon.png" width="60" height="40" className="d-inline-block align-top" alt="Cloudnotes"/>
-          <span className='footerTitle'>Cloudnotes</span>
-          <span className="copyright">
-            Copyright &#169; 2022 Cloudnotes
-          </span>
-        </div>
+      <div className="footerBrand">
+        <img src="cloudNotesIcon.png" width="60" height="40" className="d-inline-block align-top" alt="Cloudnotes"/>
+        <span className='footerTitle'>Cloudnotes</span>
+        <span className="copyright">
+          Copyright &#169; 2022 Cloudnotes
+        </span>
+      </div>
 
       <div className="contactIcons">
         <a href="https://github.com/bilalyusuf973">
