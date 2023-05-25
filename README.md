@@ -20,7 +20,9 @@ This command will start the frontend and backend of the app at the same time.
 
 npm run both 
 
-<img width="1067" alt="allnotes3" src="https://user-images.githubusercontent.com/111658408/222955655-efa9e1ad-90c3-4771-80c9-f07e0f98a9c2.png">
-<img width="1070" alt="notepage3" src="https://user-images.githubusercontent.com/111658408/222955667-837ad854-7f58-49ac-94a3-1c4b02af98ac.png">
-<img width="1050" alt="login4" src="https://user-images.githubusercontent.com/111658408/222955963-22d8bee4-492b-4450-93b6-3c4869e6d11f.png">
-<img width="1049" alt="signup3" src="https://user-images.githubusercontent.com/111658408/222955684-f8cf0c85-9df2-4bbb-b4a1-7e7f83ff66e5.png">
+
+<img width="1064" alt="allnotesUpdated" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/d8709bec-63da-4728-a678-72ad98172db6">
+<img width="1058" alt="Screenshot 2023-05-24 002802" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/5375bb65-068f-47eb-b516-6ec49d9be04b">
+<img width="1028" alt="Screenshot 2023-05-24 002841" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/2a5c1924-0144-4dcf-a12e-0a274b438b26">
+<img width="893" alt="Screenshot 2023-05-24 002908" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/08e1f627-eebc-425e-900e-645faa75bc89">
+<img width="950" alt="Screenshot 2023-05-24 002854" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/54f364fe-ebb0-4f8b-bbc0-f3c4ef6c64e9">
