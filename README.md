@@ -13,16 +13,13 @@ A web app made by using MERN stack to maintain important notes of a user.
 
 In the project directory you can run 
 
-'''console
-npm install
-'''
+
+## npm install
 
 After the installation of the node_modules folder, you can run the below command.
 This command will start the frontend and backend of the app at the same time.
 
-'''console
-npm run both
-'''
+## npm run both
 
 
 <img width="1064" alt="allnotesUpdated" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/d8709bec-63da-4728-a678-72ad98172db6">
