@@ -22,20 +22,17 @@ git clone https://github.com/bilalyusuf973/Cloudnotes.git
 ```
 2. Install the dependencies:
 ```bash
-cd Cloudnotes/backend
+cd Cloudnotes
 npm install
-cd ../
-npm install
-```
-3. Now run:
-```bash
 cd backend
+npm install
 ```
-4. In the db.js file replace `process.env.MongoAtlasURI` with `Your MongoDB Atlas URI`
+3. In the db.js file replace `process.env.MongoAtlasURI` with `Your MongoDB Atlas URI`
+4. Now:
 ```bash
 cd ../
 ```
-5. Run the app:
+5. Run the app by the following command:
 ```bash
 npm run both
 ```
