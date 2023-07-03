@@ -27,7 +27,7 @@ npm install
 cd backend
 npm install
 ```
-3. In the db.js file replace `process.env.MongoAtlasURI` with `Your MongoDB Atlas URI`
+3. In the db.js file replace `process.env.MongoAtlasURI` with `"Your MongoDB Atlas URI"`
 4. Run the app:
 ```bash
 cd ../
