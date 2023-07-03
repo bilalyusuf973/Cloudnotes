@@ -1,26 +1,28 @@
 
 # Cloudnotes
 
-A web app made by using MERN stack to maintain important notes of a user.
+Cloudnotes is a web app that allows users to store their important notes and code snippets securely on the cloud. The app is built using the MERN stack (MongoDB, Express, React, and Node.js), and it features all the essential security measures, such as authentication, authorization, and encryption.
 
-  * Features ---
-  
-  1. A new user can sign up and also can save his/her notes in the database.
-  2. A existing user can come and see his/her notes save securely.
-  3. All the essential features like Authentication, Authorization and Interative UI were taken into account.
+With Cloudnotes, users can:
 
-## Available Scripts
+* Create, edit, and delete notes and code snippets.
+* Organize their notes and code snippets into the database.
+* Search for notes and code snippets by title, language, or tag.
 
-In the project directory you can run 
+# Requirements
 
+* Node.js
+* MongoDB
 
-## npm install
+# How to run the app
 
-After the installation of the node_modules folder, you can run the below command.
-This command will start the frontend and backend of the app at the same time.
+1. Clone the repository to your local machine.
+   
+2. Install the dependencies by running npm install.
 
-## npm run both
+3. Run the app by running npm run both.
 
+```npm run both```
 
 <img width="1064" alt="allnotesUpdated" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/d8709bec-63da-4728-a678-72ad98172db6">
 <img width="1058" alt="Screenshot 2023-05-24 002802" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/5375bb65-068f-47eb-b516-6ec49d9be04b">
