@@ -18,7 +18,7 @@ With Cloudnotes, users can:
 
 1. Clone the repository to your local machine.
 ```bash
-https://github.com/bilalyusuf973/Cloudnotes.git
+git clone https://github.com/bilalyusuf973/Cloudnotes.git
 cd Cloudnotes/backend
 npm install
 cd ../
