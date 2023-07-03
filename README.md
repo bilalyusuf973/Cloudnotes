@@ -17,14 +17,18 @@ With Cloudnotes, users can:
 # How to run the app
 
 1. Clone the repository to your local machine.
-   
-2. Install the dependencies by running npm install.
-
-3. Run the app by running npm run both.
-
 ```bash
+https://github.com/bilalyusuf973/Cloudnotes.git
+cd Cloudnotes/backend
+npm install
+cd ../
+npm install
 npm run both
 ```
+   
+3. Install the dependencies by running npm install.
+
+4. Run the app by running npm run both.
 
 <img width="1064" alt="allnotesUpdated" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/d8709bec-63da-4728-a678-72ad98172db6">
 <img width="1058" alt="Screenshot 2023-05-24 002802" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/5375bb65-068f-47eb-b516-6ec49d9be04b">
