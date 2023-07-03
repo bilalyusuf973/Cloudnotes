@@ -22,7 +22,7 @@ With Cloudnotes, users can:
 
 3. Run the app by running npm run both.
 
-data-clipboard-text="npm run both"
+```data-clipboard-text="npm run both"```
 
 <img width="1064" alt="allnotesUpdated" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/d8709bec-63da-4728-a678-72ad98172db6">
 <img width="1058" alt="Screenshot 2023-05-24 002802" src="https://github.com/bilalyusuf973/Cloudnotes/assets/111658408/5375bb65-068f-47eb-b516-6ec49d9be04b">
