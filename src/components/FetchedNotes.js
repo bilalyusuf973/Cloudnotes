@@ -7,10 +7,11 @@ import Navbar from './Navbar'
 
 const FetchedNotes = (props) => {
   const context = useContext(NoteContext);
-  const {notes, getNotes, editNote} = context;
+  const {notes, queryNotes, getNotes, editNote, searchNotes} = context;
   const {setNotes, showAlert} = props;
   const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: "", eLang: ""});
   const [code, setCode] = useState("");
+  const [query, setQuery] = useState("");
 
   const navigate = useNavigate();
 
@@ -50,6 +51,31 @@ const FetchedNotes = (props) => {
     navigate("/");
   }
 
+  useEffect(() => {
+    document.querySelector(".fa-xmark").style.visibility = "hidden";
+  }, []);
+
+  const searchBarHandle = (val) => {
+    setQuery(val);
+    document.querySelector(".fa-xmark").style.visibility = (val === "") ? "hidden" : "visible";
+  }
+
+  const searchResults = () => {
+    if(query !== ""){
+      searchNotes((query === "c++" || query === "C++") ? "cpp" : query);
+      searchBarHandle("");
+    }
+  }
+
+  // Add an event listener for the key press event on the input element
+  document.querySelector(".searchBar")?.addEventListener("keypress", function(event) {
+    // Check if the Enter key was pressed (key code 13)
+    if (event.keyCode === 13) {
+      // Trigger the click event on the button
+      document.querySelector(".searchIcon")?.click();
+    }
+  });
+
   return (
     <>
       <Navbar setNote={setNotes} showAlert={showAlert}/>
@@ -69,19 +95,19 @@ const FetchedNotes = (props) => {
               <div className="modal-body">
               <form>
             <div className="mb-3">
-              <label htmlFor="title" className="form-label"> Title: </label><br />
+              <label htmlFor="editTitle" className="form-label"> Title: </label><br />
               <input type="text" className="editInput" id="editTitle" name="title" value={note.editTitle} aria-describedby="title" onChange={handleChange}/>
             </div>
 
             <div className="mb-3">
-              <label htmlFor="description" className="form-label"> Description: </label><br />
+              <label htmlFor="editDescription" className="form-label"> Description: </label><br />
               <textarea type="textarea" className="editTextarea" id="editDescription" value={note.editDescription} name="description" onChange={handleChange}/>
             </div>
 
             <div className="enotesArea">
-            <label htmlFor="code" className="form-label"> Code: </label><br />
+            <div className="mb-2"> Code: </div>
               <div className="editCodeArea">
-                <Editor theme='vs-dark' 
+                <Editor theme='vs-dark'
                   height="22.99rem"
                   width="99.72%"
                   defaultLanguage={note.eLang}
@@ -95,7 +121,7 @@ const FetchedNotes = (props) => {
 
             <div className="editLangTag">
               <div className="editLang">
-                <label htmlFor="lang" className="form-label"> Language: </label><br/>
+                <label htmlFor="eLang" className="form-label"> Language: </label><br/>
                 <select id="eLang" value={note.eLang} onChange={handleChange}>
                   <option value="c">C</option>
                   <option value="cpp">C++</option>
@@ -114,7 +140,7 @@ const FetchedNotes = (props) => {
                 </select>            
               </div>
               <div className="editTag">
-                <label htmlFor="tag" className="form-label"> Tag: </label><br/>
+                <label htmlFor="editTag" className="form-label"> Tag: </label><br/>
                 <select name="format" className="editSelect" id="editTag" onChange={handleChange} value={note.editTag}>
                     <option value="Personal" name="Personal">Personal</option>
                     <option value="Professional" name="Professional">Professional</option>
@@ -139,8 +165,23 @@ const FetchedNotes = (props) => {
             </div>
           </div>
         </div>
+        <h3 className="my-4">Search Notes:</h3>
+        <div className="mb-5 searchFeature">
+          <div className="searchDiv">
+            <input type="text" className="searchBar" id="searchBar" placeholder="Enter Keywords..." value={query} onChange={e => searchBarHandle(e.target.value)}/>
+            <div className="searchBtn"><i className="fa-solid fa-xmark clearQuery" onClick={() => {setQuery("")}}></i><span className="verticalLine"></span><i className="fa-solid fa-magnifying-glass searchIcon" onClick={searchResults}></i></div>
+          </div>
+        </div>
+        {queryNotes.length > 0 && <div className="results">
+          <h3 className="my-4">Search Results:</h3>
+          <div className="row">
+            {queryNotes.map((note, index) => {
+              return <NotesItem key={index} note={note} handleEditClick={() => {handleEditClick(note)}} setNotes={setNotes} showAlert={showAlert}/>
+            })}
+          </div>
+        </div>}
         <div className="my-3">
-          <h3 className="my-4">All Notes</h3>
+          <h3 className="my-4">All Notes:</h3>
           {notes.length === 0 && <div className="my-5">
             <h6>Please add a note to display here...</h6>
             <button className="BtnAddnote" onClick={addnotesFunc}>Add Notes</button>

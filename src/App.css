@@ -247,6 +247,10 @@
   .select:hover::after {
     color: #52575c;
   }
+
+  .card{
+    border-radius: 15px;
+  }
   
   .card-title{
     color: #2fadc9;
@@ -475,6 +479,14 @@
     .shortprofile{
       display: none;
     }
+
+    .searchDiv{
+      width: 100%;
+    }
+
+    .searchBar{
+      width: 85%;
+    }
   }
   
   @media screen and (min-width: 768px){
@@ -528,7 +540,14 @@
       justify-content: center;
       align-items: center;
     }
-  
+
+    .searchDiv{
+      width: 70%;
+    }
+
+    .searchBar{
+      width: 91%;
+    }
   }
   
   #DOB{
@@ -644,7 +663,7 @@
   
   .showUsername{
     display: none;
-    width: 100px;
+    width: 150px;
     position: absolute;
     top: 42px;
     left: auto;
@@ -671,14 +690,62 @@
 
   .mb-0{
     font-weight: lighter;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   strong{
     font-weight: bolder;
-    font-size: 13px;
+    font-size: 18px;
   }
 
   .shortprofile:hover + .showUsername{
     display: block;
   }
+
+  /* Search Note feature Styles */
+
+.searchDiv{
+  display: flex;
+}
+
+
+.searchBar{
+  font-family: sans-serif;
+  margin: 0;
+  height: 53px;
+  outline: none;
+  text-indent: 15px;
+  border: none;
+  color: white;
+  background-color:#242627;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.searchBtn{
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding-right: 15px;
+  height: 53px;
+  color: white;
+  font-size: 19px;
+  background-color: #242627;
+  cursor: pointer;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.fa-xmark{
+  color: gray;
+}
+
+.verticalLine{
+  margin: 0 13px;
+  border-left: 1px solid gray;
+  height: 35px;
+}
+
+i.fa-magnifying-glass{
+  color: #2fadc9;
+}

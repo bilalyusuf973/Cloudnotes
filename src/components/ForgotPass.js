@@ -52,7 +52,7 @@ const ForgotPass = (props) => {
           <input type="email" className="form-control authForm" id="email" name="email" onChange={handleChange} value={credentials.email} aria-describedby="emailHelp" placeholder='Email Address'/>
         </div>
         <div className="form-group">
-        <input type="text" id="dob" placeholder="Date of Birth" className='form-control authForm' required value={dob}
+        <input type="text" id="dob" name="dob" placeholder="Date of Birth" className='form-control authForm' required value={dob}
             onChange={(e) => {setDOB(e.target.value)}} onFocus={(e) => {e.target.setAttribute('type','date')}} onBlur={onBlurFunc}></input>
         </div>
         <div className="form-group">

@@ -5,6 +5,21 @@ import NoteContext from './NoteContext';
 const NoteState = (props) => {
 
   const [notes, setNotes] = useState([]);
+  const [queryNotes, setQueryNotes] = useState([])
+
+  const searchNotes = async (query) => {
+    const response = await fetch(`${props.host}/api/notes/searchnotes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('token')
+      },
+      body: JSON.stringify({query})
+    });
+    
+    const json = await response.json();
+    if(json.success) setQueryNotes(json.notes);
+  }
 
 
   //get all notes
@@ -18,14 +33,14 @@ const NoteState = (props) => {
     });
 
     const json = await response.json();
-    setNotes(json);
+    if(json.success) setNotes(json.notes);
   }
 
 
   //add a note
   const addNote = async (newNote) => {
     //API call
-    await fetch(`${props.host}/api/notes/newnote`, {
+    const res = await fetch(`${props.host}/api/notes/newnote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +49,8 @@ const NoteState = (props) => {
       body: JSON.stringify(newNote)
     });
 
-    setNotes(notes.concat(newNote));
+    const json = await res.json();
+    if(json.success) setNotes(notes.concat(newNote));
   }
   
 
@@ -64,7 +80,7 @@ const NoteState = (props) => {
   }
 
   return (
-    <NoteContext.Provider value = {{notes, addNote, editNote, deleteNote, getNotes}}> 
+    <NoteContext.Provider value = {{notes, queryNotes, addNote, editNote, deleteNote, getNotes, searchNotes}}> 
         {props.children}
     </NoteContext.Provider>
   )

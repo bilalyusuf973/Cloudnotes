@@ -56,7 +56,7 @@ const Signup = (props) => {
             <input type="email" className="form-control authForm" value={credentials.email} name="email" id="email" aria-describedby="emailHelp" onChange={handleChange} required placeholder='Email address'/>
         </div>
         <div className="mb-3">
-          <input type="text" id="dob" placeholder="Date of Birth" className='form-control authForm' required value={dob}
+          <input type="text" id="dob" name="dob" placeholder="Date of Birth" className='form-control authForm' required value={dob}
             onChange={(e) => {setDOB(e.target.value)}} onFocus={(e) => {e.target.setAttribute('type','date')}} onBlur={onBlurFunc}></input>
         </div>
         <div className="mb-3">

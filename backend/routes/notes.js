@@ -26,10 +26,10 @@ router.post('/newnote', fetchuser, [
             lang: req.body.lang
         });
 
-        res.json(note);
+        res.json({success: true, note});
 
     } catch (error) {
-        res.status(400).send({error: 'Internal server error'});
+        res.status(400).send({success: false, error: 'Internal server error'});
     }
 
 });
@@ -42,11 +42,11 @@ router.get('/fetchallnotes', fetchuser, async (req, res)=>{
     try {
 
         const notes = await Notes.find({user: req.user.id});
-        res.json(notes);
+        res.json({success: true, notes});
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Internal Server Error!"); 
+        res.status(500).send({success: false, error: "Internal Server Error!"}); 
     }
 });
 
@@ -74,13 +74,11 @@ router.put('/updatenote/:id', fetchuser, async (req, res)=>{
             return res.status(401).send("Not Allowed!");
         }
     
-        note = await Notes.findByIdAndUpdate(req.params.id, {$set: newNote}, {new: true});
-        
-        res.json({note});
+        await Notes.findByIdAndUpdate(req.params.id, {$set: newNote}, {new: true});
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Internal Server Error!");        
+        res.status(500).send({success: false, error: "Internal Server Error!"});        
     }
 
 });
@@ -100,15 +98,32 @@ router.delete('/deletenote/:id', fetchuser, async (req, res)=>{
             return res.status(401).send("Not Allowed!");
         }
 
-        note = await Notes.findByIdAndDelete(req.params.id);
-
-        res.json({"Success" : "Note has been deleted"});   
+        await Notes.findByIdAndDelete(req.params.id);   
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Internal Server Error!");
+        res.status(500).send({success: false, error: "Internal Server Error!"});
     }
 
 });
+
+router.post('/searchnotes', fetchuser, async (req, res) => {
+    try {
+        const notes = await Notes.find({
+            user: req.user.id,
+            $or: [
+              { title: { $regex: req.body.query, $options: 'i' } },
+              { lang: { $regex: req.body.query, $options: 'i' } },
+              { tag: { $regex: req.body.query, $options: 'i' } }
+            ]
+        });
+
+        res.json({success: true, notes});
+          
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({success: false, error: "Internal Server Error!"});        
+    }
+})
 
 module.exports = router;

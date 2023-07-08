@@ -33,7 +33,7 @@ const Navbar = (props) => {
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link className= {`navbar-link`} style={{textDecoration: 'none'}} to="/allnotes"> 
-              All notes 
+              My notes 
             </Link> 
           </li> 
           <li className="nav-item">
