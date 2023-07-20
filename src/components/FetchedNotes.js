@@ -168,8 +168,8 @@ const FetchedNotes = (props) => {
         <h3 className="my-4">Search Notes:</h3>
         <div className="mb-5 searchFeature">
           <div className="searchDiv">
-            <input type="text" className="searchBar" id="searchBar" placeholder="Enter Keywords..." value={query} onChange={e => searchBarHandle(e.target.value)}/>
-            <div className="searchBtn"><i className="fa-solid fa-xmark clearQuery" onClick={() => {setQuery("")}}></i><span className="verticalLine"></span><i className="fa-solid fa-magnifying-glass searchIcon" onClick={searchResults}></i></div>
+            <input type="text" className="searchBar" autoComplete="off" id="searchBar" placeholder="Enter Keywords..." value={query} onChange={e => searchBarHandle(e.target.value)}/>
+            <div className="searchBtn"><i className="fa-solid fa-xmark clearQuery" onClick={() => {searchBarHandle("")}}></i><span className="verticalLine"></span><i className="fa-solid fa-magnifying-glass searchIcon" onClick={searchResults}></i></div>
           </div>
         </div>
         {queryNotes.length > 0 && <div className="results">

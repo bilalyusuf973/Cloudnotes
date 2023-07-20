@@ -14,7 +14,7 @@ import './App.css'
 
 function App() {
   const [note, setNote] = useState({title: "", description: "", tag: "--- Tag ---", code: "// Enter your code here", lang: "cpp"});
-  const host = "http://localhost:5000";
+  const host = "http://localhost:8010";
 
   const notify = (type, msg) => {
     toast(msg, {type: `${type}`, toastId: `${type}`});
