@@ -10,7 +10,7 @@
     color: white;
   }
   
-  .navbarBrandDiv, .authButton, .credentials, .footer, .footerBrand, .langTagDiv, .editorDiv, .editCodeArea, .langDiv, .tagDiv, .editDeleteIcons, .profileImage{
+  .navbarBrandDiv, .authButton, .credentials, .footer, .footerBrand, .langTagDiv, .editorDiv, .editCodeArea, .langDiv, .tagDiv, .editDeleteIcons, .profileImage, .upload, .upload_copy{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +21,12 @@
     flex-direction: column;
     margin-top: 10rem;
     justify-content: center;
+  }
+
+  .sticky{
+    position:sticky;
+    top: 0;
+    z-index: 100;
   }
   
   .heading{
@@ -296,6 +302,16 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
+
+  #file{
+    display: none;
+  }
+
+  .fa-file-import{
+    margin: 0 10px;
+    font-size: 1.3rem;
+    color: white;
+  }
   
   .CopyIcon{
     margin-right: 5px;
@@ -303,7 +319,7 @@
     color: white;
   }
   
-  .CopyIcon:hover, .editIcon:hover, .deleteIcon:hover{
+  .CopyIcon:hover, .editIcon:hover, .deleteIcon:hover, .fa-file-import:hover{
     color: rgb(205, 142, 247);
   }
   
@@ -748,4 +764,8 @@
 
 i.fa-magnifying-glass{
   color: #2fadc9;
+}
+
+#file {
+  display: none;
 }

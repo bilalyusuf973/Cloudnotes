@@ -6,26 +6,24 @@ import Editor from "@monaco-editor/react";
 import Navbar from './Navbar'
 
 const FetchedNotes = (props) => {
-  const context = useContext(NoteContext);
-  const {notes, queryNotes, getNotes, editNote, searchNotes} = context;
+  const {notes, queryNotes, getNotes, editNote, searchNotes} = useContext(NoteContext);
   const {setNotes, showAlert} = props;
   const [note, setNote] = useState({id: "", editTitle: "", editDescription: "", editTag: "", eLang: ""});
   const [code, setCode] = useState("");
   const [query, setQuery] = useState("");
 
+  const myRef = useRef(null);
+  const refClose = useRef(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(localStorage.getItem('token')){
+    if(localStorage.getItem('token'))
       getNotes();
-    }
-    else{
+    else
       navigate("/login");
-    }
-  });
+  }, [getNotes, navigate]);
 
-  const myRef = useRef(null);
-  const refClose = useRef(null);
   const handleEditClick = (currentNote) => {
     myRef.current.click();
     setNote({id: currentNote._id, editTitle: currentNote.title, editDescription: currentNote.description, editTag: currentNote.tag, eLang: currentNote.lang});
