@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import NoteContext from '../context/notes/NoteContext';
+
 
 const Signup = (props) => {
+  const { host } = useContext(NoteContext)
   const [credentials, setCredentials] = useState({name: "", email: "", password: "", cpassword: ""});
   const [dob, setDOB] = useState("");
   const navigate = useNavigate();
@@ -12,7 +15,7 @@ const Signup = (props) => {
         return props.showAlert("warning", "Confirm Your Password Correctly");
       }
       //API call
-      const response = await fetch(`${props.host}/api/auth/createuser`, {
+      const response = await fetch(`${host}/api/auth/createuser`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

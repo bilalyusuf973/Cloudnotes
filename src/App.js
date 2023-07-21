@@ -27,10 +27,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Notepage note={note} setNote={setNote} showAlert={notify}/>} />
             <Route path="/about" element={<About setNote={setNote} showAlert={notify}/>} />
-            <Route path="/login" element={<Login host={host} showAlert={notify}/>}/>
-            <Route path="/signup" element={<Signup host={host} showAlert={notify}/>}/>
+            <Route path="/login" element={<Login showAlert={notify}/>}/>
+            <Route path="/signup" element={<Signup showAlert={notify}/>}/>
             <Route path="/allnotes" element={<FetchedNotes setNotes={setNote} showAlert={notify}/>} />
-            <Route path="/forgotpassword" element={<ForgotPass host={host} showAlert={notify}/>} />
+            <Route path="/forgotpassword" element={<ForgotPass showAlert={notify}/>} />
           </Routes>
           <ToastContainer position="top-center" autoClose={600} hideProgressBar={false} newestOnTop={true} closeOnClick rtl={false} draggable theme="colored"/>
           <Footer/>

@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import NoteContext from '../context/notes/NoteContext';
 
 const Login = (props) => {
+    const { host } = useContext(NoteContext);
     const [credentials, setCredentials] = useState({email: "", password: ""});
     const navigate = useNavigate();
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
         //API call
-        const response = await fetch(`${props.host}/api/auth/login`, {
+        const response = await fetch(`${host}/api/auth/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

@@ -6,9 +6,10 @@ const NoteState = (props) => {
 
   const [notes, setNotes] = useState([]);
   const [queryNotes, setQueryNotes] = useState([])
+  const { host } = props;
 
   const searchNotes = async (query) => {
-    const response = await fetch(`${props.host}/api/notes/searchnotes`, {
+    const response = await fetch(`${host}/api/notes/searchnotes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +26,7 @@ const NoteState = (props) => {
   //get all notes
   const getNotes = async () => {
     //API call
-    const response = await fetch(`${props.host}/api/notes/fetchallnotes`, {
+    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
       method: 'GET',
       headers: {
         'auth-token': localStorage.getItem('token')
@@ -40,7 +41,7 @@ const NoteState = (props) => {
   //add a note
   const addNote = async (newNote) => {
     //API call
-    const res = await fetch(`${props.host}/api/notes/newnote`, {
+    const res = await fetch(`${host}/api/notes/newnote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ const NoteState = (props) => {
   //edit a note
   const editNote = async (noteID, title, description, tag, code, lang) => {
     //API call
-    await fetch(`${props.host}/api/notes/updatenote/${noteID}`, {
+    await fetch(`${host}/api/notes/updatenote/${noteID}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -71,7 +72,7 @@ const NoteState = (props) => {
   //delete a note
   const deleteNote = async (noteID) => {
     //API call
-    await fetch(`${props.host}/api/notes/deletenote/${noteID}`, {
+    await fetch(`${host}/api/notes/deletenote/${noteID}`, {
       method: 'DELETE',
       headers: {
         'auth-token': localStorage.getItem('token')
@@ -80,7 +81,7 @@ const NoteState = (props) => {
   }
 
   return (
-    <NoteContext.Provider value = {{notes, queryNotes, addNote, editNote, deleteNote, getNotes, searchNotes}}> 
+    <NoteContext.Provider value = {{host, notes, queryNotes, addNote, editNote, deleteNote, getNotes, searchNotes}}> 
         {props.children}
     </NoteContext.Provider>
   )
