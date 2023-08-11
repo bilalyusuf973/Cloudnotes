@@ -147,7 +147,7 @@
     height: 90%;
     background-color:  #1e1e1e;
     outline: none;
-    color: white;
+    color: #76bef8;
   }
   
   #description{
@@ -167,7 +167,7 @@
   .editInput{
     height: 40px;
     width: 100%;
-    color: white;
+    color: #76bef8;
     background-color: #1e1e1e;
     border: none;
     border-radius: 4px;
